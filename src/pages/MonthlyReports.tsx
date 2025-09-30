@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, Download, Calendar } from "lucide-react";
+import { FileText, Download, Calendar, CheckCircle2 } from "lucide-react";
 
 const MonthlyReports = () => {
   const reports = [
@@ -82,15 +82,15 @@ const MonthlyReports = () => {
                   <p className="text-muted-foreground">{report.summary}</p>
                   
                   <div>
-                    <h4 className="font-semibold mb-2 text-primary">Key Highlights:</h4>
-                    <ul className="space-y-2">
+                    <h4 className="font-semibold mb-3 text-primary text-lg">Key Highlights:</h4>
+                    <div className="space-y-3">
                       {report.highlights.map((highlight, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <span className="text-secondary font-bold mt-1">•</span>
-                          <span className="text-muted-foreground">{highlight}</span>
-                        </li>
+                        <div key={idx} className="flex items-start gap-3 p-2 rounded">
+                          <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground leading-relaxed">{highlight}</span>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

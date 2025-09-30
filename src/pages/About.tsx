@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Heart, Award } from "lucide-react";
+import { Users, Target, Heart, Award, CheckCircle2 } from "lucide-react";
 
 const About = () => {
   const values = [
@@ -136,44 +136,72 @@ const About = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary mx-auto mb-8"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-semibold text-primary">Belief in Human Potential</h3>
-                <p className="text-muted-foreground">
-                  We believe that every person has inherent worth and untapped potential. Our role is to provide 
-                  the tools, resources, and opportunities needed to unlock that potential.
-                </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="border-l-4 border-l-primary shadow-card hover:shadow-hover transition-all duration-300">
+              <CardContent className="p-8 space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
+                    <CheckCircle2 className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-primary mb-2">Belief in Human Potential</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We believe that every person has inherent worth and untapped potential. Our role is to provide 
+                      the tools, resources, and opportunities needed to unlock that potential.
+                    </p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-secondary">
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-semibold text-secondary">Commitment to Excellence</h3>
-                <p className="text-muted-foreground">
-                  We don't just provide aid; we create pathways to self-sufficiency. Every programme is designed 
-                  with long-term sustainability and measurable impact in mind.
-                </p>
+            <Card className="border-l-4 border-l-secondary shadow-card hover:shadow-hover transition-all duration-300">
+              <CardContent className="p-8 space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-secondary/10 flex-shrink-0">
+                    <CheckCircle2 className="h-6 w-6 text-secondary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-secondary mb-2">Commitment to Excellence</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We don't just provide aid; we create pathways to self-sufficiency. Every programme is designed 
+                      with long-term sustainability and measurable impact in mind.
+                    </p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-accent">
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-semibold text-accent">Holistic Approach</h3>
-                <p className="text-muted-foreground">
-                  We understand that true empowerment requires addressing multiple dimensions of well-being - 
-                  education, health, economic stability, and social support.
-                </p>
+            <Card className="border-l-4 border-l-accent shadow-card hover:shadow-hover transition-all duration-300">
+              <CardContent className="p-8 space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-accent/10 flex-shrink-0">
+                    <CheckCircle2 className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-accent mb-2">Holistic Approach</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We understand that true empowerment requires addressing multiple dimensions of well-being - 
+                      education, health, economic stability, and social support.
+                    </p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-l-primary">
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-semibold text-primary">Community Partnership</h3>
-                <p className="text-muted-foreground">
-                  We work alongside communities, not for them. Local voices, needs, and leadership drive our 
-                  programmes, ensuring relevance and sustainability.
-                </p>
+            <Card className="border-l-4 border-l-primary shadow-card hover:shadow-hover transition-all duration-300">
+              <CardContent className="p-8 space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
+                    <CheckCircle2 className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-primary mb-2">Community Partnership</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We work alongside communities, not for them. Local voices, needs, and leadership drive our 
+                      programmes, ensuring relevance and sustainability.
+                    </p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
