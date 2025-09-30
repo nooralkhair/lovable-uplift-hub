@@ -9,10 +9,7 @@ const Footer = () => {
           {/* About */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="bg-gradient-hero p-2 rounded-lg">
-                <Heart className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <span className="text-lg font-bold">Lovable</span>
+              <span className="text-lg font-bold">NOOR AL KHAIR CHARITABLE TRUST</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Dedicated to economic upliftment, education, and social empowerment across various sectors of society.
@@ -63,22 +60,22 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Mail className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">info@lovable.org</span>
+                <span className="text-muted-foreground">nooralkhairct@gmail.com</span>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">+1 (555) 123-4567</span>
+                <span className="text-muted-foreground">7698853478</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">123 Charity Lane, Community City, CC 12345</span>
+                <span className="text-muted-foreground">Registered Address, Noor al khair Charitable Trust office, Silvassa</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Lovable. All rights reserved. Making a difference, one life at a time.</p>
+          <p>&copy; {new Date().getFullYear()} NAKCT. All rights reserved. Making a difference, one life at a time.</p>
         </div>
       </div>
     </footer>

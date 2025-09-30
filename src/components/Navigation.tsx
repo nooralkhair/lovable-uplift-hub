@@ -23,11 +23,8 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-gradient-hero p-2 rounded-lg transition-transform group-hover:scale-105">
-              <Heart className="h-6 w-6 text-primary-foreground" />
-            </div>
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Lovable
+              NAKCT
             </span>
           </Link>
 
