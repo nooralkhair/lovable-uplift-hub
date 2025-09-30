@@ -35,7 +35,7 @@ const About = () => {
       <section className="bg-gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
-            About Lovable
+            About NAKCT
           </h1>
           <p className="text-xl md:text-2xl opacity-95 leading-relaxed animate-slide-up">
             A journey of compassion, commitment, and community transformation
@@ -54,7 +54,7 @@ const About = () => {
           <Card className="border-2 border-primary/20 shadow-card">
             <CardContent className="p-8 md:p-12 space-y-6 text-lg leading-relaxed">
               <p>
-                <span className="font-semibold text-primary">Lovable</span> was born from a simple yet powerful idea: 
+                <span className="font-semibold text-primary">NAKCT</span> was born from a simple yet powerful idea: 
                 that every individual, regardless of their circumstances, deserves the opportunity to live a life of 
                 dignity, purpose, and prosperity.
               </p>

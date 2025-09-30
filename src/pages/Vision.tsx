@@ -51,7 +51,7 @@ const Vision = () => {
           <Card className="border-2 border-primary/20 shadow-card">
             <CardContent className="p-8 md:p-12 space-y-6 text-lg leading-relaxed">
               <p>
-                At <span className="font-semibold text-primary">Lovable</span>, we believe in the transformative 
+                At <span className="font-semibold text-primary">NAKCT</span>, we believe in the transformative 
                 power of education, compassion, and opportunity. Our vision is rooted in the fundamental belief 
                 that every person deserves the chance to thrive, not just survive.
               </p>
