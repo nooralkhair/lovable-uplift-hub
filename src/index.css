@@ -18,20 +18,19 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Primary: Deep Blue for trust */
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 217 91% 75%;
+    --primary: 141 72% 35%;             /* Green dome */
+    --primary-foreground: 0 0% 100%;    /* White text on green */
+    --primary-light: 141 72% 50%;
 
-    /* Secondary: Warm Coral for compassion */
-    --secondary: 24 95% 53%;
-    --secondary-foreground: 0 0% 100%;
-    --secondary-light: 24 95% 70%;
+    /* Secondary: Light Blue */
+    --secondary: 199 84% 65%;           /* Light trust blue */
+    --secondary-foreground: 222 47% 11%; /* Dark text on blue bg */
+    --secondary-light: 199 84% 75%;
 
-    /* Accent: Emerald for growth */
-    --accent: 160 84% 39%;
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 160 84% 60%;
+    /* Accent: Blue (we can explore variants here later) */
+    --accent: 221 100% 40%;             /* Deep blue */
+    --accent-foreground: 0 0% 100%;     /* White text on blue */
+    --accent-light: 221 100% 55%;
 
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
@@ -46,9 +45,14 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 45%) 100%);
-    --gradient-warm: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(24 95% 65%) 100%);
-    --gradient-growth: linear-gradient(135deg, hsl(160 84% 39%) 0%, hsl(160 84% 52%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(141 72% 35%) 0%, hsl(141 72% 25%) 100%);
+    /* Primary Green focus → deepening shades (growth, faith, strength) */
+
+    --gradient-warm: linear-gradient(135deg, hsl(141 72% 35%) 0%, hsl(199 84% 65%) 100%);
+    /* Green → Light Blue (your new primary + secondary harmony) */
+
+    --gradient-growth: linear-gradient(135deg, hsl(199 84% 65%) 0%, hsl(199 84% 55%) 100%);
+    /* Light Blue tones (trust, clarity, openness) */
     
     /* Shadows */
     --shadow-soft: 0 2px 10px -2px hsl(217 91% 60% / 0.15);
@@ -88,17 +92,19 @@ All colors MUST be HSL.
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217 91% 60%;
+    --primary: 141 72% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 217 91% 50%;
+    --primary-light: 141 72% 60%;
 
-    --secondary: 24 95% 53%;
-    --secondary-foreground: 0 0% 100%;
-    --secondary-light: 24 95% 60%;
+    /* Secondary: Deeper Blue tone */
+    --secondary: 199 84% 55%;
+    --secondary-foreground: 0 0% 100%;  /* White text on darker blue */
+    --secondary-light: 199 84% 65%;
 
-    --accent: 160 84% 39%;
+    /* Accent: Brighter Blue */
+    --accent: 221 100% 60%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 160 84% 50%;
+    --accent-light: 221 100% 70%;
 
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;

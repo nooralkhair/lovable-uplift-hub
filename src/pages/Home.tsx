@@ -6,7 +6,7 @@ import { GraduationCap, Heart, Stethoscope, Briefcase, ArrowRight } from "lucide
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-community.jpg";
 
-const Index = () => {
+const Home = () => {
   const programmes = [
     {
       icon: GraduationCap,
@@ -51,35 +51,25 @@ const Index = () => {
         
         <div className="container mx-auto px-4 z-10 text-center text-primary-foreground">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
-            Empowering Lives,<br />Building Communities
+            Connecting needy people with capable people to uplift the Ummah, Insha'Allah
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-95 animate-slide-up">
             Join us in creating lasting change through education, healthcare, and economic empowerment
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
-            <Button size="lg" className="bg-secondary hover:bg-secondary-light text-lg px-8">
-              Make a Donation
-            </Button>
-            <Button size="lg" variant="outline" className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground text-primary-foreground hover:bg-primary-foreground/20 text-lg px-8">
-              Learn More
-            </Button>
-          </div>
         </div>
       </section>
-
-      {/* Vision Statement */}
+      {/* News & Events Section */}
       <section className="py-16 bg-gradient-to-b from-background to-muted">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Our Vision
+            News and Events
           </h2>
           <p className="text-xl text-foreground leading-relaxed">
-            To create a society where every individual has access to quality education, healthcare, 
-            and economic opportunities, enabling them to lead dignified and empowered lives.
+            Stay informed about our latest initiatives, success stories, and upcoming events that are making a difference in the community
           </p>
-          <Link to="/vision">
+          <Link to="/news-events">
             <Button variant="link" className="mt-4 text-primary">
-              Read Full Vision <ArrowRight className="ml-2 h-4 w-4" />
+              Get Updated News and Events <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
         </div>
@@ -145,28 +135,9 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h2 className="text-4xl font-bold mb-6">Join Us in Making a Difference</h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Your support can transform lives and build stronger communities. Every contribution counts.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-warm text-lg px-8">
-              Donate Now
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              Become a Volunteer
-            </Button>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default Home;

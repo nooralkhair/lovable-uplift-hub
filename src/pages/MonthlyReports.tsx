@@ -116,21 +116,6 @@ const MonthlyReports = () => {
           </Card>
         </div>
       </section>
-
-      {/* Archive Notice */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h3 className="text-2xl font-bold mb-4">Looking for Older Reports?</h3>
-          <p className="text-lg text-muted-foreground mb-6">
-            Access our complete report archive dating back to our inception. All reports are available 
-            for download and review.
-          </p>
-          <Button variant="outline" size="lg">
-            View Report Archive
-          </Button>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );

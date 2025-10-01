@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -9,10 +9,10 @@ const Navigation = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Vision", path: "/vision" },
     { name: "About", path: "/about" },
     { name: "Programmes", path: "/programmes" },
     { name: "Monthly Reports", path: "/monthly-reports" },
+    { name: "News & Events", path: "/news-events" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -22,11 +22,10 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              NAKCT
-            </span>
-          </Link>
+          <Link
+            to="/"
+            className="flex items-center gap-2 group h-16 w-16 rounded-full bg-[url('../src/assets/logo.jpg')] bg-cover bg-center"
+          />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
@@ -43,16 +42,6 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-2">
-            <Button variant="outline" size="sm">
-              Volunteer
-            </Button>
-            <Button size="sm" className="bg-gradient-warm">
-              Donate
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -83,14 +72,6 @@ const Navigation = () => {
                   {link.name}
                 </Link>
               ))}
-              <div className="flex flex-col gap-2 mt-4 px-4">
-                <Button variant="outline" size="sm">
-                  Volunteer
-                </Button>
-                <Button size="sm" className="bg-gradient-warm">
-                  Donate
-                </Button>
-              </div>
             </div>
           </div>
         )}

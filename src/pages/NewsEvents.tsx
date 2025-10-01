@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, Heart, Award, CheckCircle2 } from "lucide-react";
 
-const About = () => {
+const NewsEvents = () => {
   const values = [
     {
       icon: Heart,
@@ -213,4 +213,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default NewsEvents;

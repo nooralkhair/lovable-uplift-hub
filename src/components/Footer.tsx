@@ -1,9 +1,9 @@
-import { Heart, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-muted border-t border-border mt-20">
+    <footer className="bg-muted">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
@@ -21,8 +21,8 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/vision" className="text-muted-foreground hover:text-primary transition-colors">
-                  Vision
+                <Link to="/news-events" className="text-muted-foreground hover:text-primary transition-colors">
+                  News and Events
                 </Link>
               </li>
               <li>
@@ -68,7 +68,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">Registered Address, Noor al khair Charitable Trust office, Silvassa</span>
+                <span className="text-muted-foreground">NOOR AL-KHAIR CHARITABLE TRUST, <br/> Shop No. 30, Govind Tower Commercial, Umerkoi Road, Bavisa Faliya, Silvassa</span>
               </li>
             </ul>
           </div>
