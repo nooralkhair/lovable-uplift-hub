@@ -1,30 +1,20 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { FileText, Download, Calendar, CheckCircle2 } from "lucide-react";
+import { FileText, Download } from "lucide-react";
 
 const MonthlyReports = () => {
   const reports = [
-    {
-      month: "March 2025",
-      date: "March 31, 2025",
-      summary: "Comprehensive overview of all programmes and activities",
-      highlights: ["150 students enrolled", "25 medical camps conducted", "40 businesses supported"],
-    },
-    {
-      month: "February 2025",
-      date: "February 28, 2025",
-      summary: "Educational initiatives and community outreach programmes",
-      highlights: ["Youth counselling sessions", "Widow support distribution", "Healthcare drives"],
-    },
-    {
-      month: "January 2025",
-      date: "January 31, 2025",
-      summary: "New year initiatives and programme launches",
-      highlights: ["Technical training program launch", "Orphan education sponsorship", "Livelihood workshops"],
-    },
+    { month: "March 2025", pdfUrl: "/reports/march-2025.pdf" },
+    { month: "February 2025", pdfUrl: "/reports/february-2025.pdf" },
+    { month: "January 2025", pdfUrl: "/reports/january-2025.pdf" },
+    { month: "December 2024", pdfUrl: "/reports/december-2024.pdf" },
+    { month: "November 2024", pdfUrl: "/reports/november-2024.pdf" },
   ];
+
+  const handleReportClick = (pdfUrl: string) => {
+    // Opens PDF in new tab or triggers download
+    window.open(pdfUrl, '_blank');
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -37,83 +27,31 @@ const MonthlyReports = () => {
             Monthly Reports
           </h1>
           <p className="text-xl md:text-2xl opacity-95 leading-relaxed animate-slide-up">
-            Transparency and accountability in action - explore our monthly programme updates
+            Access our monthly programme updates and impact reports
           </p>
         </div>
       </section>
 
-      {/* Reports Section */}
+      {/* Reports List */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Latest Reports</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Stay informed about our activities, impact, and financial transparency through our detailed monthly reports
-            </p>
-          </div>
-
-          <div className="space-y-6">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="space-y-4">
             {reports.map((report, index) => (
-              <Card 
-                key={index} 
-                className="hover:shadow-hover transition-all duration-300 border-2 border-border hover:border-primary/30"
+              <div 
+                key={index}
+                onClick={() => handleReportClick(report.pdfUrl)}
+                className="flex items-center justify-between p-6 bg-card border-2 border-border rounded-lg hover:border-primary/50 hover:shadow-hover transition-all duration-300 cursor-pointer group"
               >
-                <CardHeader className="pb-4">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-light flex items-center justify-center flex-shrink-0">
-                        <FileText className="h-6 w-6 text-primary-foreground" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-2xl mb-2">{report.month}</CardTitle>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Calendar className="h-4 w-4" />
-                          <span>Published: {report.date}</span>
-                        </div>
-                      </div>
-                    </div>
-                    <Button className="bg-gradient-warm w-full md:w-auto">
-                      <Download className="mr-2 h-4 w-4" />
-                      Download PDF
-                    </Button>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-light flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <FileText className="h-6 w-6 text-primary-foreground" />
                   </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground">{report.summary}</p>
-                  
-                  <div>
-                    <h4 className="font-semibold mb-3 text-primary text-lg">Key Highlights:</h4>
-                    <div className="space-y-3">
-                      {report.highlights.map((highlight, idx) => (
-                        <div key={idx} className="flex items-start gap-3 p-2 rounded">
-                          <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground leading-relaxed">{highlight}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  <h3 className="text-xl font-semibold">{report.month}</h3>
+                </div>
+                <Download className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+              </div>
             ))}
           </div>
-
-          {/* Information Card */}
-          <Card className="mt-12 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/30">
-            <CardContent className="p-8 text-center space-y-4">
-              <FileText className="h-12 w-12 mx-auto text-primary" />
-              <h3 className="text-2xl font-semibold">About Our Reports</h3>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Our monthly reports provide detailed insights into our activities, financial statements, 
-                beneficiary statistics, and impact assessments. We believe in complete transparency and 
-                accountability to our donors, volunteers, and the communities we serve.
-              </p>
-              <div className="pt-4">
-                <p className="text-sm text-muted-foreground">
-                  Reports are published within the first week of each month
-                </p>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
       <Footer />

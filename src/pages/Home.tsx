@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { GraduationCap, Heart, Stethoscope, Briefcase, ArrowRight } from "lucide-react";
+import { GraduationCap, Heart, Stethoscope, Briefcase, ArrowRight, Info, Users, FileText, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-community.jpg";
 
@@ -58,8 +58,71 @@ const Home = () => {
           </p>
         </div>
       </section>
+
+      {/* Quick Navigation Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Explore Noor Al-Khair</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Discover who we are, what we do, and how we're making an impact
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <Link to="/about">
+              <Card className="group hover:shadow-hover hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-border hover:border-primary/30 h-full">
+                <CardContent className="p-8 text-center space-y-4">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-light flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Info className="h-8 w-8 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-xl font-semibold">About Us</h3>
+                  <p className="text-muted-foreground">Learn about our mission and vision</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/programmes">
+              <Card className="group hover:shadow-hover hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-border hover:border-primary/30 h-full">
+                <CardContent className="p-8 text-center space-y-4">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-secondary to-secondary-light flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Users className="h-8 w-8 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-xl font-semibold">Programmes</h3>
+                  <p className="text-muted-foreground">Explore our community initiatives</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/monthly-reports">
+              <Card className="group hover:shadow-hover hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-border hover:border-primary/30 h-full">
+                <CardContent className="p-8 text-center space-y-4">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent to-accent-light flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <FileText className="h-8 w-8 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-xl font-semibold">Monthly Reports</h3>
+                  <p className="text-muted-foreground">View our transparency reports</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/news-events">
+              <Card className="group hover:shadow-hover hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-border hover:border-primary/30 h-full">
+                <CardContent className="p-8 text-center space-y-4">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Calendar className="h-8 w-8 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-xl font-semibold">News & Events</h3>
+                  <p className="text-muted-foreground">Stay updated with our activities</p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* News & Events Section */}
-      <section className="py-16 bg-gradient-to-b from-background to-muted">
+      <section className="py-16 bg-gradient-to-b from-muted to-background">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             News and Events
