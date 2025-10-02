@@ -1,9 +1,53 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Heart, Award, CheckCircle2 } from "lucide-react";
+import { Users, Target, Heart, Award, CheckCircle2, Calendar, MapPin, Clock, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const NewsEvents = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const events = [
+    {
+      title: "Youth Skills Workshop 2025",
+      date: "March 15, 2025",
+      time: "10:00 AM - 4:00 PM",
+      location: "Community Center, Main Street",
+      description: "A comprehensive workshop focused on developing professional skills for youth, including resume building, interview preparation, and career guidance.",
+    },
+    {
+      title: "Annual Health Camp",
+      date: "April 20, 2025",
+      time: "9:00 AM - 5:00 PM",
+      location: "Central Park Grounds",
+      description: "Free health checkups, medical consultations, and distribution of essential medicines for the community members.",
+    },
+    {
+      title: "Education Support Drive",
+      date: "May 5, 2025",
+      time: "11:00 AM - 3:00 PM",
+      location: "City Hall",
+      description: "Distribution of educational materials, scholarships, and support for underprivileged students.",
+    },
+  ];
+
+  const galleryImages = [
+    { url: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800", caption: "Community gathering event" },
+    { url: "https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?w=800", caption: "Educational support program" },
+    { url: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800", caption: "Health camp initiative" },
+    { url: "https://images.unsplash.com/photo-1509099652299-30938b0aeb63?w=800", caption: "Youth empowerment workshop" },
+    { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800", caption: "Skills training session" },
+  ];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
   const values = [
     {
       icon: Heart,
@@ -35,11 +79,115 @@ const NewsEvents = () => {
       <section className="bg-gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
-            About NAKCT
+            News & Events
           </h1>
           <p className="text-xl md:text-2xl opacity-95 leading-relaxed animate-slide-up">
-            A journey of compassion, commitment, and community transformation
+            Stay updated with our latest initiatives and community activities
           </p>
+        </div>
+      </section>
+
+      {/* Upcoming Events Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Upcoming Events</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Join us in our upcoming events and be part of the positive change
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {events.map((event, index) => (
+              <Card key={index} className="border-2 border-primary/20 shadow-card hover:shadow-hover transition-all duration-300 hover:scale-105">
+                <CardContent className="p-6 space-y-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
+                    <Calendar className="h-6 w-6 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-xl font-bold">{event.title}</h3>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="h-4 w-4 text-primary" />
+                      <span>{event.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-primary" />
+                      <span>{event.time}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4 text-primary" />
+                      <span>{event.location}</span>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{event.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Gallery</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto mb-8"></div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Glimpses of our impactful work in the community
+            </p>
+          </div>
+
+          <Card className="border-2 border-secondary/20 shadow-card overflow-hidden">
+            <CardContent className="p-0">
+              <div className="relative">
+                <img
+                  src={galleryImages[currentImageIndex].url}
+                  alt={galleryImages[currentImageIndex].caption}
+                  className="w-full h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                  <p className="text-white text-lg font-semibold p-6">
+                    {galleryImages[currentImageIndex].caption}
+                  </p>
+                </div>
+                
+                {/* Navigation Buttons */}
+                <Button
+                  variant="secondary"
+                  size="icon"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg"
+                  onClick={prevImage}
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="icon"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg"
+                  onClick={nextImage}
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </Button>
+              </div>
+              
+              {/* Thumbnails */}
+              <div className="flex justify-center gap-2 p-4 bg-background">
+                {galleryImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-all ${
+                      index === currentImageIndex
+                        ? "bg-primary w-8"
+                        : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                    }`}
+                  />
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 

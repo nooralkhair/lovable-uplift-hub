@@ -46,14 +46,16 @@ const Navigation = () => {
               to="/"
               className="flex items-center gap-2 group h-16 w-16 rounded-full bg-[url('../src/assets/logo.jpg')] bg-cover bg-center"
             />
-            <Button
-              variant="default"
-              size="sm"
-              className="hidden sm:flex items-center gap-2 animate-pulse hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <Heart className="h-4 w-4 fill-current" />
-              Donate Now
-            </Button>
+            <Link to="/donate">
+              <Button
+                variant="default"
+                size="sm"
+                className="hidden sm:flex items-center gap-2 animate-pulse hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <Heart className="h-4 w-4 fill-current" />
+                Donate Now
+              </Button>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -112,14 +114,16 @@ const Navigation = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button
-                variant="default"
-                size="sm"
-                className="flex sm:hidden items-center gap-2 mx-4 animate-pulse hover:animate-none"
-              >
-                <Heart className="h-4 w-4 fill-current" />
-                Donate Now
-              </Button>
+              <Link to="/donate" onClick={() => setIsOpen(false)}>
+                <Button
+                  variant="default"
+                  size="sm"
+                  className="flex sm:hidden items-center gap-2 mx-4 animate-pulse hover:animate-none w-[calc(100%-2rem)]"
+                >
+                  <Heart className="h-4 w-4 fill-current" />
+                  Donate Now
+                </Button>
+              </Link>
               <Button
                 variant="secondary"
                 size="sm"

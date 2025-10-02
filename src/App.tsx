@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Programmes from "./pages/Programmes";
 import MonthlyReports from "./pages/MonthlyReports";
+import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./ScrollToTop";
 import NewsEvents from "./pages/NewsEvents";
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/programmes" element={<Programmes />} />
           <Route path="/monthly-reports" element={<MonthlyReports />} />
+          <Route path="/donate" element={<Donate />} />
           <Route path="/news-events" element={<NewsEvents />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
