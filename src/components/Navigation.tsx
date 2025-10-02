@@ -29,8 +29,8 @@ const Navigation = () => {
 
   const handleJoinUs = () => {
     if (isMobile) {
-      const message = encodeURIComponent("Hello! I would like to join and support Lovable's mission.");
-      window.location.href = `https://wa.me/9999999999?text=${message}`;
+      const message = encodeURIComponent("Hello! I would like to join and support this mission.");
+      window.location.href = `https://wa.me/9106623708?text=${message}`;
     } else {
       setShowComingSoon(true);
     }
@@ -39,18 +39,18 @@ const Navigation = () => {
   return (
     <nav className="bg-background shadow-soft sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-28">
           {/* Logo and Donate Button */}
           <div className="flex items-center gap-3">
             <Link
               to="/"
-              className="flex items-center gap-2 group h-16 w-16 rounded-full bg-[url('../src/assets/logo.jpg')] bg-cover bg-center"
+              className="h-28 w-28 rounded-full bg-[url('../src/assets/logo.jpg')] bg-center bg-no-repeat bg-[length:120%] flex items-center justify-center"
             />
             <Link to="/donate">
               <Button
                 variant="default"
                 size="sm"
-                className="hidden sm:flex items-center gap-2 animate-pulse hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="hidden sm:flex items-center gap-2 animate-pulse hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
               >
                 <Heart className="h-4 w-4 fill-current" />
                 Donate Now
@@ -60,7 +60,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-3">
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 text-lg">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -99,7 +99,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 text-lg">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -118,7 +118,7 @@ const Navigation = () => {
                 <Button
                   variant="default"
                   size="sm"
-                  className="flex sm:hidden items-center gap-2 mx-4 animate-pulse hover:animate-none w-[calc(100%-2rem)]"
+                  className="flex sm:hidden items-center gap-2 mx-4 animate-pulse hover:animate-none w-[calc(100%-2rem)] text-lg"
                 >
                   <Heart className="h-4 w-4 fill-current" />
                   Donate Now

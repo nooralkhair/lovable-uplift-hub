@@ -12,8 +12,30 @@ import {
   Building,
   CheckCircle2
 } from "lucide-react";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Programmes = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        const yOffset = -112; // Adjust for sticky headers (if any)
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+
+        setTimeout(() => {
+          window.history.replaceState(null, "", location.pathname);
+        }, 600); // or match scroll duration
+      }
+    }
+  }, [location]);
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -32,7 +54,7 @@ const Programmes = () => {
       </section>
 
       {/* Programme 1: Education and Training */}
-<section className="py-20 bg-background">
+<section id="education-training" className="py-20 bg-background">
   <div className="container mx-auto px-4 max-w-6xl">
     <div className="flex items-center gap-4 mb-12">
       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center shadow-card">
@@ -157,7 +179,7 @@ const Programmes = () => {
 </section>
 
 {/* Programme 2: Orphans & Widows */}
-<section className="py-20 bg-muted">
+<section id="orphans-widows" className="py-20 bg-muted">
   <div className="container mx-auto px-4 max-w-6xl">
     <div className="flex items-center gap-4 mb-12">
       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary to-secondary-light flex items-center justify-center shadow-card">
@@ -221,7 +243,7 @@ const Programmes = () => {
 </section>
 
 {/* Programme 3: Healthcare and Nutrition */}
-<section className="py-20 bg-background">
+<section id="healthcare-nutrition" className="py-20 bg-background">
   <div className="container mx-auto px-4 max-w-6xl">
     <div className="flex items-center gap-4 mb-12">
       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-accent-light flex items-center justify-center shadow-card">
@@ -304,7 +326,7 @@ const Programmes = () => {
 </section>
 
 {/* Programme 4: Livelihood */}
-<section className="py-20 bg-muted">
+<section id="livelihood-support" className="py-20 bg-muted">
   <div className="container mx-auto px-4 max-w-6xl">
     <div className="flex items-center gap-4 mb-12">
       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary via-accent to-accent-light flex items-center justify-center shadow-card">

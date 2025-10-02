@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Heart, Stethoscope, Briefcase, ArrowRight, Info, Users, FileText, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-community.jpg";
+import heroImage from "@/assets/hero.jpg";
 
 const Home = () => {
   const programmes = [
@@ -13,24 +13,28 @@ const Home = () => {
       title: "Education & Training",
       description: "Empowering youth with skills and knowledge for a brighter future",
       color: "from-primary to-primary-light",
+      href: "#education-training",
     },
     {
       icon: Heart,
       title: "Orphans & Widows",
       description: "Supporting vulnerable families with care and resources",
       color: "from-secondary to-secondary-light",
+      href: "#orphans-widows",
     },
     {
       icon: Stethoscope,
       title: "Healthcare & Nutrition",
       description: "Providing medical support and nutritional care",
       color: "from-accent to-accent-light",
+      href: "#healthcare-nutrition",
     },
     {
       icon: Briefcase,
       title: "Livelihood Support",
       description: "Creating sustainable income opportunities",
       color: "from-primary to-accent",
+      href: "#livelihood-support",
     },
   ];
 
@@ -50,7 +54,7 @@ const Home = () => {
         </div>
         
         <div className="container mx-auto px-4 z-10 text-center text-primary-foreground">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-5xl font-bold mb-8 animate-fade-in mx-auto py-12">
             Connecting needy people with capable people to uplift the Ummah, Insha'Allah
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-95 animate-slide-up">
@@ -58,69 +62,46 @@ const Home = () => {
           </p>
         </div>
       </section>
+      
 
-      {/* Quick Navigation Section */}
+      {/* Programmes Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Explore Noor Al-Khair</h2>
+            <h2 className="text-4xl font-bold mb-4">Our Programmes</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Discover who we are, what we do, and how we're making an impact
+              Comprehensive initiatives designed to uplift communities and create lasting impact
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <Link to="/about">
-              <Card className="group hover:shadow-hover hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-border hover:border-primary/30 h-full">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-light flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Info className="h-8 w-8 text-primary-foreground" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {programmes.map((programme, index) => (
+              <Link to={`/programmes${programme.href}`}>
+              <Card 
+                key={index} 
+                className="group hover:shadow-hover transition-all duration-300 cursor-pointer border-border hover:scale-105"
+              >
+                <CardContent className="p-6 text-center space-y-4">
+                  <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-br ${programme.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                    <programme.icon className="h-8 w-8 text-primary-foreground" />
                   </div>
-                  <h3 className="text-xl font-semibold">About Us</h3>
-                  <p className="text-muted-foreground">Learn about our mission and vision</p>
+                  <h3 className="text-xl font-semibold">{programme.title}</h3>
+                  <p className="text-muted-foreground">{programme.description}</p>
                 </CardContent>
               </Card>
-            </Link>
+              </Link>
+            ))}
+          </div>
 
+          <div className="text-center mt-12">
             <Link to="/programmes">
-              <Card className="group hover:shadow-hover hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-border hover:border-primary/30 h-full">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-secondary to-secondary-light flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Users className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-semibold">Programmes</h3>
-                  <p className="text-muted-foreground">Explore our community initiatives</p>
-                </CardContent>
-              </Card>
-            </Link>
-
-            <Link to="/monthly-reports">
-              <Card className="group hover:shadow-hover hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-border hover:border-primary/30 h-full">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent to-accent-light flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <FileText className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-semibold">Monthly Reports</h3>
-                  <p className="text-muted-foreground">View our transparency reports</p>
-                </CardContent>
-              </Card>
-            </Link>
-
-            <Link to="/news-events">
-              <Card className="group hover:shadow-hover hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-border hover:border-primary/30 h-full">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Calendar className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-semibold">News & Events</h3>
-                  <p className="text-muted-foreground">Stay updated with our activities</p>
-                </CardContent>
-              </Card>
+              <Button size="lg" className="bg-gradient-hero">
+                Explore All Programmes
+              </Button>
             </Link>
           </div>
         </div>
       </section>
-
       {/* News & Events Section */}
       <section className="py-16 bg-gradient-to-b from-muted to-background">
         <div className="container mx-auto px-4 text-center max-w-4xl">
@@ -135,67 +116,6 @@ const Home = () => {
               Get Updated News and Events <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
-        </div>
-      </section>
-
-      {/* Programmes Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our Programmes</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive initiatives designed to uplift communities and create lasting impact
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {programmes.map((programme, index) => (
-              <Card 
-                key={index} 
-                className="group hover:shadow-hover transition-all duration-300 cursor-pointer border-border hover:scale-105"
-              >
-                <CardContent className="p-6 text-center space-y-4">
-                  <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-br ${programme.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                    <programme.icon className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-semibold">{programme.title}</h3>
-                  <p className="text-muted-foreground">{programme.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link to="/programmes">
-              <Button size="lg" className="bg-gradient-hero">
-                Explore All Programmes
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Stats */}
-      <section className="py-20 bg-gradient-hero text-primary-foreground">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-2">
-              <h3 className="text-5xl font-bold">5000+</h3>
-              <p className="text-lg opacity-90">Students Educated</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-5xl font-bold">1200+</h3>
-              <p className="text-lg opacity-90">Families Supported</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-5xl font-bold">800+</h3>
-              <p className="text-lg opacity-90">Medical Treatments</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-5xl font-bold">300+</h3>
-              <p className="text-lg opacity-90">Jobs Created</p>
-            </div>
-          </div>
         </div>
       </section>
       <Footer />

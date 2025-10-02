@@ -34,8 +34,8 @@ const About = () => {
       {/* Hero Section */}
       <section className="bg-gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
-            About NAKCT
+          <h1 className="text-5xl md:text-5xl font-bold mb-6 animate-fade-in">
+            ABOUT <br /> NOOR AL-KHAIR CHARITABLE TRUST
           </h1>
           <p className="text-xl md:text-2xl opacity-95 leading-relaxed animate-slide-up">
             A journey of compassion, commitment, and community transformation
@@ -129,7 +129,7 @@ const About = () => {
       </section>
 
       {/* What Drives Us */}
-      <section className="py-20 bg-muted">
+      {/* <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">What Drives Us</h2>
@@ -206,7 +206,7 @@ const About = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>
