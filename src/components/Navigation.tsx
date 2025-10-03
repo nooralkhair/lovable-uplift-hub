@@ -30,9 +30,9 @@ const Navigation = () => {
   const handleJoinUs = () => {
     if (isMobile) {
       const message = encodeURIComponent(
-        "Hello! I would like to join and support this mission."
+        "Assalamualaikum, Hi I want to join NAKCT as a member! please guide me with next steps."
       );
-      window.location.href = `https://wa.me/9106623708?text=${message}`;
+      window.location.href = `https://wa.me/7698853478?text=${message}`;
     } else {
       setShowComingSoon(true);
     }
