@@ -50,9 +50,8 @@ const Navigation = () => {
             />
             <Link to="/donate">
               <Button
-                variant="default"
                 size="lg"
-                className="sm:flex items-center gap-2 animate-blink hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
+                className="sm:flex items-center gap-2 animate-blink hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl text-lg bg-yellow-500 hover:bg-yellow-400"
               >
                 <Heart className="h-4 w-4 fill-current" />
                 Donate Now
