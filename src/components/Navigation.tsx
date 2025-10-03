@@ -52,7 +52,7 @@ const Navigation = () => {
               <Button
                 variant="default"
                 size="sm"
-                className="hidden sm:flex items-center gap-2 animate-blink hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
+                className="sm:flex items-center gap-2 animate-blink hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
               >
                 <Heart className="h-4 w-4 fill-current" />
                 Donate Now
@@ -116,16 +116,6 @@ const Navigation = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link to="/donate" onClick={() => setIsOpen(false)}>
-                <Button
-                  variant="default"
-                  size="sm"
-                  className="flex sm:hidden items-center gap-2 mx-4 animate-blink hover:animate-none w-[calc(100%-2rem)] text-lg"
-                >
-                  <Heart className="h-4 w-4 fill-current" />
-                  Donate Now
-                </Button>
-              </Link>
               <Button
                 variant="secondary"
                 size="sm"
