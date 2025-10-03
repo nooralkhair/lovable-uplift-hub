@@ -27,7 +27,7 @@ const MonthlyReports = () => {
           </div>
         </section>
         <section className="flex-grow flex items-center justify-center bg-background">
-          <p className="text-lg text-muted-foreground py-32">No reports available at the moment. Please check back later.</p>
+          <p className="text-lg text-muted-foreground py-32">No reports available at the moment. Coming up soon...</p>
         </section>
         <Footer />
       </div>

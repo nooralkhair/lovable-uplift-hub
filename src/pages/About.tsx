@@ -1,213 +1,136 @@
+import { Target, Users, BookOpen, Stethoscope, Handshake, Layers } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Heart, Award, CheckCircle2 } from "lucide-react";
 
 const About = () => {
-  const values = [
+
+  const missions = [
     {
-      icon: Heart,
-      title: "Compassion",
-      description: "We lead with empathy and understanding, treating every individual with dignity and respect.",
-    },
-    {
-      icon: Target,
-      title: "Impact-Driven",
-      description: "We focus on creating measurable, lasting change in the communities we serve.",
+      icon: BookOpen,
+      text: "Nurture the next generation with Islamic and modern education.",
     },
     {
       icon: Users,
-      title: "Community-Centered",
-      description: "We believe in empowering communities to drive their own development and growth.",
+      text: "Support orphans, widows, and underprivileged families financially and emotionally.",
     },
     {
-      icon: Award,
-      title: "Integrity",
-      description: "We maintain the highest standards of accountability and transparency in all our operations.",
+      icon: Layers,
+      text: "Provide scholarships and ensure access to quality education for all.",
+    },
+    {
+      icon: Stethoscope,
+      text: "Offer medical aid and healthcare support to the sick and disabled.",
+    },
+    {
+      icon: Handshake,
+      text: "Empower families through business support and skill development.",
+    },
+    {
+      icon: Target,
+      text: "Help the needy rise from zakāt receivers to zakāt givers.",
     },
   ];
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="bg-gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h1 className="text-5xl md:text-5xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-4xl md:text-4xl font-bold mb-6 animate-fade-in">
             ABOUT <br /> NOOR AL-KHAIR CHARITABLE TRUST
           </h1>
           <p className="text-xl md:text-2xl opacity-95 leading-relaxed animate-slide-up">
-            A journey of compassion, commitment, and community transformation
+            Connecting the capable with the needy — serving humanity with dignity and faith.
           </p>
         </div>
       </section>
 
-      {/* Our Story */}
+      {/* About Us */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our Story</h2>
+            <h2 className="text-4xl font-bold mb-4">About Us</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
           </div>
 
           <Card className="border-2 border-primary/20 shadow-card">
             <CardContent className="p-8 md:p-12 space-y-6 text-lg leading-relaxed">
               <p>
-                <span className="font-semibold text-primary">NAKCT</span> was born from a simple yet powerful idea: 
-                that every individual, regardless of their circumstances, deserves the opportunity to live a life of 
-                dignity, purpose, and prosperity.
+                Noor Al-Khair Charitable Trust (<span className="font-semibold text-primary">NAKCT</span>) 
+                is a non-profit Islamic organization established in 2024 by{" "}
+                <span className="font-semibold">Haji MOHAMMED YUSUF ADAM SHAIKH</span> (Founder) and{" "}
+                <span className="font-semibold">SALEEM MOMIN</span> (Co-founder). In 2025, the legal framework 
+                was strengthened with the support of{" "}
+                <span className="italic">Haji Mohammed Noaman, Haji Mukarram Khan, Sheikh Dilavar Gulab, 
+                Rahemat Baig Mirza, and Israr Ahmed Shaikh</span>.
               </p>
               <p>
-                Our journey began with a small group of dedicated individuals who witnessed firsthand the struggles 
-                faced by marginalized communities - families without access to quality education, orphans and widows 
-                without adequate support, talented youth without opportunities to develop their skills, and communities 
-                lacking basic healthcare facilities.
+                Guided by the Qur’an and Sunnah, our mission is to serve humanity through education, healthcare, 
+                social welfare, and economic empowerment. We believe that charity is not just financial aid, 
+                but a means to restore dignity, hope, and opportunity in people’s lives.
               </p>
               <p>
-                What started as a grassroots initiative has grown into a comprehensive non-profit organization dedicated 
-                to addressing the multifaceted challenges of economic upliftment, education, healthcare, and social 
-                empowerment. We work at the intersection of compassion and action, turning genuine concern into 
-                tangible results.
+                From supporting orphans, widows, and underprivileged families, to offering scholarships, medical 
+                aid, and small business support, every effort we make is rooted in the Islamic values of compassion, 
+                justice, and brotherhood.
               </p>
-              <p>
-                Today, we serve thousands of individuals across multiple communities, but our mission remains unchanged: 
-                to create lasting, positive change that transforms lives and builds stronger, more resilient communities.
-              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Vision */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Our Vision</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto mb-8"></div>
+          </div>
+
+          <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/30">
+            <CardContent className="p-8 md:p-12 text-center text-xl leading-relaxed">
+              To build a society rooted in Qur’an and Sunnah — self-sufficient, educated, and spiritually strong. 
+              A community where the less fortunate are uplifted with dignity, and Islam becomes a complete way of life.
             </CardContent>
           </Card>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Our Mission</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto mb-8"></div>
-          </div>
-
-          <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/30">
-            <CardContent className="p-8 md:p-12">
-              <p className="text-xl leading-relaxed text-center">
-                To empower individuals and communities through comprehensive programmes in education, healthcare, 
-                economic development, and social welfare, enabling them to break the cycle of poverty and achieve 
-                sustainable prosperity while maintaining their dignity and cultural values.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Core Values */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our Core Values</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide every decision we make and every action we take
+              Empowering the Ummah through holistic programs and sustainable initiatives
             </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-6"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {values.map((value, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {missions.map((mission, index) => (
               <Card 
                 key={index} 
-                className="group hover:shadow-hover transition-all duration-300 border-border hover:scale-105"
+                className="border border-border hover:shadow-hover transition-all duration-300"
               >
-                <CardContent className="p-6 text-center space-y-4">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-primary to-primary-light flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <value.icon className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-semibold">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
+                <CardContent className="p-6 flex items-start gap-4">
+                  <mission.icon className="w-8 h-8 text-primary shrink-0" />
+                  <p className="text-lg">{mission.text}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-xl font-semibold italic text-primary">
+              🌟 Motto: Connecting needy people with capable people to uplift the Ummah, Insha’Allah.
+            </p>
+          </div>
         </div>
       </section>
-
-      {/* What Drives Us */}
-      {/* <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">What Drives Us</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary mx-auto mb-8"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="border-l-4 border-l-primary shadow-card hover:shadow-hover transition-all duration-300">
-              <CardContent className="p-8 space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
-                    <CheckCircle2 className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-primary mb-2">Belief in Human Potential</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      We believe that every person has inherent worth and untapped potential. Our role is to provide 
-                      the tools, resources, and opportunities needed to unlock that potential.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-secondary shadow-card hover:shadow-hover transition-all duration-300">
-              <CardContent className="p-8 space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="p-2 rounded-lg bg-secondary/10 flex-shrink-0">
-                    <CheckCircle2 className="h-6 w-6 text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-secondary mb-2">Commitment to Excellence</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      We don't just provide aid; we create pathways to self-sufficiency. Every programme is designed 
-                      with long-term sustainability and measurable impact in mind.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-accent shadow-card hover:shadow-hover transition-all duration-300">
-              <CardContent className="p-8 space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="p-2 rounded-lg bg-accent/10 flex-shrink-0">
-                    <CheckCircle2 className="h-6 w-6 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-accent mb-2">Holistic Approach</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      We understand that true empowerment requires addressing multiple dimensions of well-being - 
-                      education, health, economic stability, and social support.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-primary shadow-card hover:shadow-hover transition-all duration-300">
-              <CardContent className="p-8 space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
-                    <CheckCircle2 className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-primary mb-2">Community Partnership</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      We work alongside communities, not for them. Local voices, needs, and leadership drive our 
-                      programmes, ensuring relevance and sustainability.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section> */}
-
       <Footer />
     </div>
   );
