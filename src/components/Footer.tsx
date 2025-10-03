@@ -15,8 +15,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Dedicated to economic upliftment, education, and social
-              empowerment across various sectors of society.
+              Connecting needy people with capable people to uplift the Ummah, Insha'Allah
             </p>
           </div>
 
