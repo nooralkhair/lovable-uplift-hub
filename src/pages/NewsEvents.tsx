@@ -80,47 +80,21 @@ useEffect(() => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map((event, index) => (
-              <Card key={index} className="border-2 border-primary/20 shadow-card hover:shadow-hover transition-all duration-300 hover:scale-105">
-                <CardContent className="p-6 space-y-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
-                    <Calendar className="h-6 w-6 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-bold">{event.title}</h3>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-primary" />
-                      <span>{event.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4 text-primary" />
-                      <span>{event.time}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-primary" />
-                      <span>{event.location}</span>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">{event.description}</p>
-                   {/* Popup for image */}
-        <Dialog>
-          <DialogTrigger className="text-primary underline hover:text-primary-dark">
-            View Image
-          </DialogTrigger>
-          <DialogContent className="p-2 sm:p-4 max-w-lg sm:max-w-2xl">
-            <DialogClose asChild>
-            <img
-              src={event.image}
-              alt={event.title}
-              className="w-full max-h-[80vh] object-contain rounded-lg"
-            />
-            </DialogClose>
-          </DialogContent>
-        </Dialog>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+  {events.map((event, index) => (
+    <Card
+      key={index}
+      className="border-2 border-primary/20 shadow-card hover:shadow-hover transition-all duration-300 hover:scale-105 overflow-hidden"
+    >
+      {/* Event Image */}
+      <img
+        src={event.image}
+        alt={event.title}
+        className="w-full h-full object-cover"
+      />
+    </Card>
+  ))}
+</div>
+
         </div>
       </section>
 

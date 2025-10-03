@@ -79,7 +79,7 @@ const Navigation = () => {
             </div>
             <Button
               variant="secondary"
-              size="sm"
+              size="lg"
               onClick={handleJoinUs}
               className="flex items-center gap-2 hover:scale-105 transition-all duration-300"
             >
@@ -118,12 +118,12 @@ const Navigation = () => {
               ))}
               <Button
                 variant="secondary"
-                size="sm"
+                size="lg"
                 onClick={() => {
                   setIsOpen(false);
                   handleJoinUs();
                 }}
-                className="flex items-center gap-2 mx-4"
+                className="flex items-center gap-2 mt-2"
               >
                 <UserPlus className="h-4 w-4" />
                 Join Us
