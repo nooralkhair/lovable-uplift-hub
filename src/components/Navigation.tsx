@@ -30,9 +30,9 @@ const Navigation = () => {
   const handleJoinUs = () => {
     if (isMobile) {
       const message = encodeURIComponent(
-        "Hello! I would like to join and support this mission."
+        "Assalamualaikum, Hi I want to join NAKCT as a member! please guide me with next steps."
       );
-      window.location.href = `https://wa.me/9106623708?text=${message}`;
+      window.location.href = `https://wa.me/7698853478?text=${message}`;
     } else {
       setShowComingSoon(true);
     }
@@ -52,7 +52,7 @@ const Navigation = () => {
               <Button
                 variant="default"
                 size="sm"
-                className="hidden sm:flex items-center gap-2 animate-blink hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
+                className="sm:flex items-center gap-2 animate-blink hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
               >
                 <Heart className="h-4 w-4 fill-current" />
                 Donate Now
@@ -116,16 +116,6 @@ const Navigation = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link to="/donate" onClick={() => setIsOpen(false)}>
-                <Button
-                  variant="default"
-                  size="sm"
-                  className="flex sm:hidden items-center gap-2 mx-4 animate-blink hover:animate-none w-[calc(100%-2rem)] text-lg"
-                >
-                  <Heart className="h-4 w-4 fill-current" />
-                  Donate Now
-                </Button>
-              </Link>
               <Button
                 variant="secondary"
                 size="sm"

@@ -8,6 +8,8 @@ import gallery1 from "@/assets/gallery1.jpeg";
 import gallery2 from "@/assets/gallery2.jpeg";
 import gallery3 from "@/assets/gallery3.jpeg";
 import gallery4 from "@/assets/gallery4.jpeg";
+import event1 from "@/assets/event1.jpg";
+import { Dialog, DialogClose, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const NewsEvents = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -16,9 +18,10 @@ const NewsEvents = () => {
     {
       title: "Inaugural Ceremony of Noor Al-Khair Charitable Trust Office",
       date: "October 5, 2025",
-      time: "10:00 AM - 4:00 PM",
+      time: "11 AM",
       location: "Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
       description: "Join us for the grand opening of our new office. Meet the team, learn about our mission, and explore how you can get involved.",
+      image: event1
     }
   ];
 
@@ -99,6 +102,21 @@ useEffect(() => {
                     </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">{event.description}</p>
+                   {/* Popup for image */}
+        <Dialog>
+          <DialogTrigger className="text-primary underline hover:text-primary-dark">
+            View Image
+          </DialogTrigger>
+          <DialogContent className="p-2 sm:p-4 max-w-lg sm:max-w-2xl">
+            <DialogClose asChild>
+            <img
+              src={event.image}
+              alt={event.title}
+              className="w-full max-h-[80vh] object-contain rounded-lg"
+            />
+            </DialogClose>
+          </DialogContent>
+        </Dialog>
                 </CardContent>
               </Card>
             ))}

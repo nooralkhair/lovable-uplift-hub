@@ -130,65 +130,81 @@ const Donate = () => {
       </section>
 
       {/* Payment Instructions Banner */}
-      <section className="py-12 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <Card className="border-2 border-primary/30 shadow-lg">
-            <CardContent className="p-8 space-y-4">
-              <h3 className="text-2xl font-bold text-center text-primary mb-4">
-                Important: Payment Remarks Format
-              </h3>
-              <p className="text-center text-muted-foreground leading-relaxed">
-                When making your donation, please mention payment remarks in the
-                following format:
-              </p>
-              <div className="bg-muted/50 p-6 rounded-lg border border-border">
-                <p className="text-center font-mono font-semibold mb-4 text-lg">
-                  NAKCT | Member No. | Month | Donation Type | Amount
-                </p>
-                <div className="space-y-2 max-w-md mx-auto">
-                  <div className="flex items-center justify-between bg-background p-3 rounded">
-                    <span className="text-sm text-muted-foreground">
-                      Example 1:
-                    </span>
-                    <span className="font-mono text-sm font-semibold">
-                      NAKCT 01 FEB25 NS 500
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between bg-background p-3 rounded">
-                    <span className="text-sm text-muted-foreground">
-                      Example 2:
-                    </span>
-                    <span className="font-mono text-sm font-semibold">
-                      NAKCT 01 FEB25 ZK 300
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Donation Types</h3>
-              <ul className="list-disc list-inside text-muted-foreground">
-                <li>
-                  <strong>Nafli Sadqa</strong> — NS
-                </li>
-                <li>
-                  <strong>Zakath</strong> — ZK
-                </li>
-                <li>
-                  <strong>Lillah</strong> — LL
-                </li>
-                <li>
-                  <strong>Fittra</strong> — FT
-                </li>
-                <li>
-                  <strong>Bank Interest</strong> — BI
-                </li>
-              </ul>
-              <p className="text-sm text-center text-muted-foreground italic pt-4">
-                This helps us track and acknowledge your contribution properly.
-              </p>
-            </CardContent>
-          </Card>
+      <section className="py-10 sm:py-12 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10">
+  <div className="container mx-auto px-4 max-w-5xl">
+    <Card className="border-2 border-primary/30 shadow-lg">
+      <CardContent className="p-6 sm:p-8 space-y-6">
+        {/* Heading */}
+        <h3 className="text-xl sm:text-2xl font-bold text-center text-primary">
+          Important: Payment Remarks Format
+        </h3>
+
+        {/* Intro Text */}
+        <p className="text-center text-sm sm:text-base text-muted-foreground leading-relaxed">
+          When making your donation, please mention payment remarks in the
+          following format:
+        </p>
+
+        {/* Format Box */}
+        <div className="bg-muted/50 p-4 sm:p-6 rounded-lg border border-border">
+          <p className="text-center font-mono font-semibold mb-4 text-base sm:text-lg">
+            NAKCT | Member No. | Month | Donation Type | Amount
+          </p>
+
+          {/* Examples */}
+          <div className="space-y-3 sm:space-y-2 max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-background p-3 rounded gap-1">
+              <span className="text-xs sm:text-sm text-muted-foreground">
+                Example 1:
+              </span>
+              <span className="font-mono text-sm sm:text-base font-semibold text-center sm:text-right">
+                NAKCT 01 FEB25 NS 500
+              </span>
+            </div>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-background p-3 rounded gap-1">
+              <span className="text-xs sm:text-sm text-muted-foreground">
+                Example 2:
+              </span>
+              <span className="font-mono text-sm sm:text-base font-semibold text-center sm:text-right">
+                NAKCT 01 FEB25 ZK 300
+              </span>
+            </div>
+          </div>
         </div>
-      </section>
+
+        {/* Donation Types */}
+        <div>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 text-center sm:text-left">
+            Donation Types
+          </h3>
+          <ul className="list-disc list-inside text-sm sm:text-base text-muted-foreground space-y-1">
+            <li>
+              <strong>Nafli Sadqa</strong> — NS
+            </li>
+            <li>
+              <strong>Zakath</strong> — ZK
+            </li>
+            <li>
+              <strong>Lillah</strong> — LL
+            </li>
+            <li>
+              <strong>Fittra</strong> — FT
+            </li>
+            <li>
+              <strong>Bank Interest</strong> — BI
+            </li>
+          </ul>
+        </div>
+
+        {/* Footer Note */}
+        <p className="text-xs sm:text-sm text-center text-muted-foreground italic pt-2 sm:pt-4">
+          This helps us track and acknowledge your contribution properly.
+        </p>
+      </CardContent>
+    </Card>
+  </div>
+</section>
+
 
       <Footer />
     </div>
