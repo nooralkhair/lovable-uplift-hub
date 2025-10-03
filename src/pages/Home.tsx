@@ -63,7 +63,21 @@ const Home = () => {
         </div>
       </section>
       
-
+{/* About (Vision) Section */}
+<section className="py-20 bg-muted/40">
+  <div className="container mx-auto px-4 text-center max-w-4xl">
+    <h2 className="text-4xl font-bold mb-6">Our Vision</h2>
+    <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+      We envision a world where compassion drives action, every individual has access to basic needs,
+      and communities are empowered to thrive spiritually, socially, and economically.
+    </p>
+    <Link to="/about">
+      <Button size="lg" className="bg-gradient-hero">
+        Read More About Us
+      </Button>
+    </Link>
+  </div>
+</section>
       {/* Programmes Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -102,6 +116,26 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* Monthly Reports Section */}
+<section className="py-20 bg-background">
+  <div className="container mx-auto px-4 text-center max-w-4xl">
+    <FileText className="h-12 w-12 mx-auto text-primary mb-4" />
+    <h3 className="text-2xl font-semibold mb-4">About Our Reports</h3>
+    <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+      Our monthly reports provide detailed insights into our activities, financial statements, 
+      beneficiary statistics, and impact assessments. We believe in complete transparency and 
+      accountability to our donors, volunteers, and the communities we serve.
+    </p>
+    <p className="text-sm text-muted-foreground mb-6">
+      Reports are published within the first week of each month
+    </p>
+    <Link to="/monthly-reports">
+      <Button size="lg" className="bg-gradient-hero">
+        View Monthly Reports
+      </Button>
+    </Link>
+  </div>
+</section>
       {/* News & Events Section */}
       <section className="py-16 bg-gradient-to-b from-muted to-background">
         <div className="container mx-auto px-4 text-center max-w-4xl">

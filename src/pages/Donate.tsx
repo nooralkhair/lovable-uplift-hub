@@ -2,12 +2,13 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Building2, QrCode } from "lucide-react";
+import qrCode from "@/assets/qrcode.jpeg";
 
 const Donate = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="bg-gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4 text-center max-w-4xl">
@@ -33,7 +34,8 @@ const Donate = () => {
                 </div>
                 <div className="text-center space-y-4">
                   <p className="text-lg italic text-foreground leading-relaxed">
-                    "The believer's shade on the Day of Resurrection will be his charity."
+                    "The believer's shade on the Day of Resurrection will be his
+                    charity."
                   </p>
                   <p className="text-sm font-semibold text-muted-foreground">
                     - Prophet Muhammad (PBUH)
@@ -41,8 +43,9 @@ const Donate = () => {
                 </div>
                 <div className="pt-4 border-t border-border">
                   <p className="text-sm text-muted-foreground text-center leading-relaxed">
-                    Your donation is not just a financial contribution - it's an investment in someone's future, 
-                    a beacon of hope, and a reflection of faith in action.
+                    Your donation is not just a financial contribution - it's an
+                    investment in someone's future, a beacon of hope, and a
+                    reflection of faith in action.
                   </p>
                 </div>
               </CardContent>
@@ -55,31 +58,38 @@ const Donate = () => {
                   <Building2 className="h-8 w-8 text-primary-foreground" />
                 </div>
                 <h3 className="text-2xl font-bold text-center">Bank Details</h3>
-                
+
                 <div className="space-y-4 bg-muted/50 p-6 rounded-lg">
                   <div className="space-y-2">
-                    <p className="text-sm text-muted-foreground">Account Name</p>
-                    <p className="text-lg font-semibold">NOOR AL-KHAIR CHARITABLE TRUST</p>
+                    <p className="text-sm text-muted-foreground">
+                      Account Name
+                    </p>
+                    <p className="text-lg font-semibold">
+                      NOOR AL-KHAIR CHARITABLE TRUST
+                    </p>
                   </div>
-                  
+
                   <div className="space-y-2">
-                    <p className="text-sm text-muted-foreground">Account Number</p>
-                    <p className="text-lg font-semibold font-mono">1234567890</p>
+                    <p className="text-sm text-muted-foreground">
+                      Account Number
+                    </p>
+                    <p className="text-lg font-semibold font-mono">
+                      50200107106851
+                    </p>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <p className="text-sm text-muted-foreground">IFSC Code</p>
-                    <p className="text-lg font-semibold font-mono">ABCD0123456</p>
+                    <p className="text-lg font-semibold font-mono">
+                      HDFC0002355
+                    </p>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <p className="text-sm text-muted-foreground">Bank Name</p>
-                    <p className="text-lg font-semibold">Sample Bank of India</p>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <p className="text-sm text-muted-foreground">Branch</p>
-                    <p className="text-lg font-semibold">Main Branch</p>
+                    <p className="text-lg font-semibold">
+                      HDFC BANK
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -91,17 +101,26 @@ const Donate = () => {
                 <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center">
                   <QrCode className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-bold text-center">Quick Donation</h3>
-                
+                <h3 className="text-2xl font-bold text-center">
+                  Quick Donation
+                </h3>
+
                 <div className="flex flex-col items-center space-y-4">
                   <div className="w-64 h-64 bg-muted rounded-lg flex items-center justify-center border-2 border-border">
                     <div className="text-center space-y-2">
-                      <QrCode className="h-32 w-32 mx-auto text-muted-foreground" />
-                      <p className="text-sm text-muted-foreground">Scan to Donate</p>
+                      <img 
+            src={qrCode} 
+            alt="Community empowerment" 
+            className="h-48 w-48 mx-auto text-muted-foreground"
+          />
+                      <p className="text-sm text-muted-foreground">
+                        Scan to Donate
+                      </p>
                     </div>
                   </div>
                   <p className="text-sm text-center text-muted-foreground">
-                    Scan this QR code with any UPI app to make an instant donation
+                    Scan this QR code with any UPI app to make an instant
+                    donation
                   </p>
                 </div>
               </CardContent>
@@ -119,25 +138,52 @@ const Donate = () => {
                 Important: Payment Remarks Format
               </h3>
               <p className="text-center text-muted-foreground leading-relaxed">
-                When making your donation, please mention payment remarks in the following format:
+                When making your donation, please mention payment remarks in the
+                following format:
               </p>
               <div className="bg-muted/50 p-6 rounded-lg border border-border">
                 <p className="text-center font-mono font-semibold mb-4 text-lg">
-                  NAKCT | Account No. | Month | Donation Type | Amount
+                  NAKCT | Member No. | Month | Donation Type | Amount
                 </p>
                 <div className="space-y-2 max-w-md mx-auto">
                   <div className="flex items-center justify-between bg-background p-3 rounded">
-                    <span className="text-sm text-muted-foreground">Example 1:</span>
-                    <span className="font-mono text-sm font-semibold">NAKCT 01 FEB25 NS 500</span>
+                    <span className="text-sm text-muted-foreground">
+                      Example 1:
+                    </span>
+                    <span className="font-mono text-sm font-semibold">
+                      NAKCT 01 FEB25 NS 500
+                    </span>
                   </div>
                   <div className="flex items-center justify-between bg-background p-3 rounded">
-                    <span className="text-sm text-muted-foreground">Example 2:</span>
-                    <span className="font-mono text-sm font-semibold">NAKCT 01 FEB25 ZK 300</span>
+                    <span className="text-sm text-muted-foreground">
+                      Example 2:
+                    </span>
+                    <span className="font-mono text-sm font-semibold">
+                      NAKCT 01 FEB25 ZK 300
+                    </span>
                   </div>
                 </div>
               </div>
+              <h3 className="text-xl font-semibold mb-2">Donation Types</h3>
+              <ul className="list-disc list-inside text-muted-foreground">
+                <li>
+                  <strong>Nafli Sadqa</strong> — NS
+                </li>
+                <li>
+                  <strong>Zakath</strong> — ZK
+                </li>
+                <li>
+                  <strong>Lillah</strong> — LL
+                </li>
+                <li>
+                  <strong>Fittra</strong> — FT
+                </li>
+                <li>
+                  <strong>Bank Interest</strong> — BI
+                </li>
+              </ul>
               <p className="text-sm text-center text-muted-foreground italic pt-4">
-                This helps us track and acknowledge your contribution properly
+                This helps us track and acknowledge your contribution properly.
               </p>
             </CardContent>
           </Card>
