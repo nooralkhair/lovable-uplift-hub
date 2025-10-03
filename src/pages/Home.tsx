@@ -41,68 +41,84 @@ const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
-      
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImage} 
-            alt="Community empowerment" 
+          <img
+            src={heroImage}
+            alt="Community empowerment"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 z-10 text-center text-primary-foreground">
           <h1 className="text-5xl md:text-5xl font-bold mb-8 animate-fade-in mx-auto py-12">
-            Connecting needy people with capable people to uplift the Ummah, Insha'Allah
+            Connecting needy people with capable people to uplift the Ummah,
+            Insha'Allah
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-95 animate-slide-up">
-            Join us in creating lasting change through education, healthcare, and economic empowerment
+            Join us in creating lasting change through education, healthcare,
+            and economic empowerment
           </p>
         </div>
       </section>
-      
-{/* About (Vision) Section */}
-<section className="py-20 bg-muted/40">
-  <div className="container mx-auto px-4 text-center max-w-4xl">
-    <h2 className="text-4xl font-bold mb-6">Our Vision</h2>
-    <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-      We envision a world where compassion drives action, every individual has access to basic needs,
-      and communities are empowered to thrive spiritually, socially, and economically.
-    </p>
-    <Link to="/about">
-      <Button size="lg" className="bg-gradient-hero">
-        Read More About Us
-      </Button>
-    </Link>
-  </div>
-</section>
-      {/* Programmes Section */}
+
+      {/* About (Vision) Section */}
       <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Our Vision</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto mb-8"></div>
+          </div>
+
+          <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/30">
+            <CardContent className="p-8 md:p-12 text-center text-xl leading-relaxed">
+              To build a society rooted in Qur’an and Sunnah — self-sufficient,
+              educated, and spiritually strong. A community where the less
+              fortunate are uplifted with dignity, and Islam becomes a complete
+              way of life.
+            </CardContent>
+          </Card>
+          <div className="text-center mt-12">
+            <Link to="/about">
+              <Button size="lg" className="bg-gradient-hero">
+                Read More About Us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+      {/* Programmes Section */}
+      <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Our Programmes</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive initiatives designed to uplift communities and create lasting impact
+              Comprehensive initiatives designed to uplift communities and
+              create lasting impact
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {programmes.map((programme, index) => (
               <Link to={`/programmes${programme.href}`}>
-              <Card 
-                key={index} 
-                className="group hover:shadow-hover transition-all duration-300 cursor-pointer border-border hover:scale-105"
-              >
-                <CardContent className="p-6 text-center space-y-4">
-                  <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-br ${programme.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                    <programme.icon className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-semibold">{programme.title}</h3>
-                  <p className="text-muted-foreground">{programme.description}</p>
-                </CardContent>
-              </Card>
+                <Card
+                  key={index}
+                  className="group hover:shadow-hover transition-all duration-300 cursor-pointer border-border hover:scale-105"
+                >
+                  <CardContent className="p-6 text-center space-y-4">
+                    <div
+                      className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-br ${programme.color} flex items-center justify-center group-hover:scale-110 transition-transform`}
+                    >
+                      <programme.icon className="h-8 w-8 text-primary-foreground" />
+                    </div>
+                    <h3 className="text-xl font-semibold">{programme.title}</h3>
+                    <p className="text-muted-foreground">
+                      {programme.description}
+                    </p>
+                  </CardContent>
+                </Card>
               </Link>
             ))}
           </div>
@@ -117,25 +133,26 @@ const Home = () => {
         </div>
       </section>
       {/* Monthly Reports Section */}
-<section className="py-20 bg-background">
-  <div className="container mx-auto px-4 text-center max-w-4xl">
-    <FileText className="h-12 w-12 mx-auto text-primary mb-4" />
-    <h3 className="text-2xl font-semibold mb-4">About Our Reports</h3>
-    <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-      Our monthly reports provide detailed insights into our activities, financial statements, 
-      beneficiary statistics, and impact assessments. We believe in complete transparency and 
-      accountability to our donors, volunteers, and the communities we serve.
-    </p>
-    <p className="text-sm text-muted-foreground mb-6">
-      Reports are published within the first week of each month
-    </p>
-    <Link to="/monthly-reports">
-      <Button size="lg" className="bg-gradient-hero">
-        View Monthly Reports
-      </Button>
-    </Link>
-  </div>
-</section>
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 text-center max-w-4xl">
+          <FileText className="h-12 w-12 mx-auto text-primary mb-4" />
+          <h3 className="text-2xl font-semibold mb-4">About Our Reports</h3>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Our monthly reports provide detailed insights into our activities,
+            financial statements, beneficiary statistics, and impact
+            assessments. We believe in complete transparency and accountability
+            to our donors, volunteers, and the communities we serve.
+          </p>
+          <p className="text-sm text-muted-foreground mb-6">
+            Reports are published within the first week of each month
+          </p>
+          <Link to="/monthly-reports">
+            <Button size="lg" className="bg-gradient-hero">
+              View Monthly Reports
+            </Button>
+          </Link>
+        </div>
+      </section>
       {/* News & Events Section */}
       <section className="py-16 bg-gradient-to-b from-muted to-background">
         <div className="container mx-auto px-4 text-center max-w-4xl">
@@ -143,11 +160,13 @@ const Home = () => {
             News and Events
           </h2>
           <p className="text-xl text-foreground leading-relaxed">
-            Stay informed about our latest initiatives, success stories, and upcoming events that are making a difference in the community
+            Stay informed about our latest initiatives, success stories, and
+            upcoming events that are making a difference in the community
           </p>
           <Link to="/news-events">
             <Button variant="link" className="mt-4 text-primary">
-              Get Updated News and Events <ArrowRight className="ml-2 h-4 w-4" />
+              Get Updated News and Events{" "}
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
         </div>
