@@ -173,7 +173,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <section className="py-20 bg-background">
+      {/* <section className="py-20 bg-background">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Updates
@@ -187,7 +187,7 @@ const Home = () => {
             </Button>
           </Link>
         </div>
-      </section>
+      </section> */}
       <Footer />
     </div>
   );
