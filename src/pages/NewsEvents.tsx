@@ -81,7 +81,7 @@ const NewsEvents = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextImageInauguration();
-    }, 1600);
+    }, 2000);
     return () => clearInterval(interval); // Cleanup
   }, [inaugurationImages.length]);
 
