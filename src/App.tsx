@@ -11,6 +11,7 @@ import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./ScrollToTop";
 import NewsEvents from "./pages/NewsEvents";
+import Updates from "./pages/Updates";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/monthly-reports" element={<MonthlyReports />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/news-events" element={<NewsEvents />} />
+          <Route path="/updates" element={<Updates />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

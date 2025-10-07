@@ -4,7 +4,7 @@ import { LucideIcon } from "lucide-react";
 
 export interface OpportunityCardProps {
   title: string;
-  description: string;
+  description: string | JSX.Element;
   location?: string;
   deadline?: string;
   type?: string;

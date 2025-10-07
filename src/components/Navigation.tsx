@@ -23,6 +23,7 @@ const Navigation = () => {
     { name: "Programmes", path: "/programmes" },
     { name: "Monthly Reports", path: "/monthly-reports" },
     { name: "News & Events", path: "/news-events" },
+    // { name: "Updates", path: "/updates" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -51,9 +52,9 @@ const Navigation = () => {
             <Link to="/donate">
               <Button
                 size="lg"
-                className="sm:flex items-center gap-2 animate-blink hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl text-lg bg-yellow-500 hover:bg-yellow-400"
+                className="sm:flex items-center gap-2 animate-blink hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl text-lg bg-yellow-500 hover:bg-yellow-400 text-red-600"
               >
-                <Heart className="h-4 w-4 fill-current" />
+                <Heart className="h-4 w-4 fill-white stroke-white" />
                 Donate Now
               </Button>
             </Link>
@@ -80,7 +81,7 @@ const Navigation = () => {
               variant="secondary"
               size="lg"
               onClick={handleJoinUs}
-              className="flex items-center gap-2 hover:scale-105 transition-all duration-300"
+              className="flex items-center gap-2 hover:scale-105 transition-all duration-300 text-lg"
             >
               <UserPlus className="h-4 w-4" />
               Join Us
@@ -122,7 +123,7 @@ const Navigation = () => {
                   setIsOpen(false);
                   handleJoinUs();
                 }}
-                className="flex items-center gap-2 mt-2"
+                className="flex items-center gap-2 mt-2 text-lg"
               >
                 <UserPlus className="h-4 w-4" />
                 Join Us
