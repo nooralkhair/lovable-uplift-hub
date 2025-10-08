@@ -18,40 +18,40 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
+const events = [
+  {
+    title: "Inaugural Ceremony of Noor Al-Khair Charitable Trust Office",
+    date: "October 5, 2025",
+    time: "11 AM",
+    location:
+      "Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
+    description:
+      "Join us for the grand opening of our new office. Meet the team, learn about our mission, and explore how you can get involved.",
+    image: event1,
+  },
+];
+
+const galleryImages = [
+  { url: gallery1, caption: "Madrasa bags" },
+  { url: gallery2, caption: "Distribution of Madrasa bags" },
+  { url: gallery3, caption: "Distribution of Madrasa bags" },
+  { url: gallery4, caption: "Distribution of Madrasa bags" },
+];
+
+const inaugurationImages = [
+  { url: inauguration1, caption: "Inaugural Ceremony" },
+  { url: inauguration2, caption: "Inaugural Ceremony" },
+  { url: inauguration3, caption: "Inaugural Ceremony" },
+  { url: inauguration4, caption: "Inaugural Ceremony" },
+  { url: inauguration5, caption: "Inaugural Ceremony" },
+  { url: inauguration6, caption: "Inaugural Ceremony" },
+  { url: inauguration7, caption: "Inaugural Ceremony" },
+  { url: inauguration8, caption: "Inaugural Ceremony" },
+];
+
 const NewsEvents = () => {
   const [currentGalleryImgIdx, setCurrentGalleryImgIdx] = useState(0);
   const [currentInaugurationImgIdx, setCurrentInaugurationImgIdx] = useState(0);
-
-  const events = [
-    {
-      title: "Inaugural Ceremony of Noor Al-Khair Charitable Trust Office",
-      date: "October 5, 2025",
-      time: "11 AM",
-      location:
-        "Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
-      description:
-        "Join us for the grand opening of our new office. Meet the team, learn about our mission, and explore how you can get involved.",
-      image: event1,
-    },
-  ];
-
-  const galleryImages = [
-    { url: gallery1, caption: "Madrasa bags" },
-    { url: gallery2, caption: "Distribution of Madrasa bags" },
-    { url: gallery3, caption: "Distribution of Madrasa bags" },
-    { url: gallery4, caption: "Distribution of Madrasa bags" },
-  ];
-
-  const inaugurationImages = [
-    { url: inauguration1, caption: "Inaugural Ceremony" },
-    { url: inauguration2, caption: "Inaugural Ceremony" },
-    { url: inauguration3, caption: "Inaugural Ceremony" },
-    { url: inauguration4, caption: "Inaugural Ceremony" },
-    { url: inauguration5, caption: "Inaugural Ceremony" },
-    { url: inauguration6, caption: "Inaugural Ceremony" },
-    { url: inauguration7, caption: "Inaugural Ceremony" },
-    { url: inauguration8, caption: "Inaugural Ceremony" },
-  ];
 
   const nextImage = () => {
     setCurrentGalleryImgIdx((prevIndex) =>

@@ -3,42 +3,49 @@ import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Briefcase, FileText, GraduationCap, Heart, Stethoscope } from "lucide-react";
+import {
+  ArrowRight,
+  Briefcase,
+  FileText,
+  GraduationCap,
+  Heart,
+  Stethoscope,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
+const programmes = [
+  {
+    icon: GraduationCap,
+    title: "Education & Training",
+    description:
+      "Empowering youth with skills and knowledge for a brighter future",
+    color: "from-primary to-primary-light",
+    href: "#education-training",
+  },
+  {
+    icon: Heart,
+    title: "Orphans & Widows",
+    description: "Supporting vulnerable families with care and resources",
+    color: "from-secondary to-secondary-light",
+    href: "#orphans-widows",
+  },
+  {
+    icon: Stethoscope,
+    title: "Healthcare & Nutrition",
+    description: "Providing medical support and nutritional care",
+    color: "from-accent to-accent-light",
+    href: "#healthcare-nutrition",
+  },
+  {
+    icon: Briefcase,
+    title: "Livelihood Support",
+    description: "Creating sustainable income opportunities",
+    color: "from-primary to-accent",
+    href: "#livelihood-support",
+  },
+];
+
 const Home = () => {
-
-  const programmes = [
-    {
-      icon: GraduationCap,
-      title: "Education & Training",
-      description: "Empowering youth with skills and knowledge for a brighter future",
-      color: "from-primary to-primary-light",
-      href: "#education-training",
-    },
-    {
-      icon: Heart,
-      title: "Orphans & Widows",
-      description: "Supporting vulnerable families with care and resources",
-      color: "from-secondary to-secondary-light",
-      href: "#orphans-widows",
-    },
-    {
-      icon: Stethoscope,
-      title: "Healthcare & Nutrition",
-      description: "Providing medical support and nutritional care",
-      color: "from-accent to-accent-light",
-      href: "#healthcare-nutrition",
-    },
-    {
-      icon: Briefcase,
-      title: "Livelihood Support",
-      description: "Creating sustainable income opportunities",
-      color: "from-primary to-accent",
-      href: "#livelihood-support",
-    },
-  ];
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />

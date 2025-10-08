@@ -1,37 +1,43 @@
-import { Target, Users, BookOpen, Stethoscope, Handshake, Layers } from "lucide-react";
+import {
+  Target,
+  Users,
+  BookOpen,
+  Stethoscope,
+  Handshake,
+  Layers,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
+const missions = [
+  {
+    icon: BookOpen,
+    text: "Nurture the next generation with Islamic and modern education.",
+  },
+  {
+    icon: Users,
+    text: "Support orphans, widows, and underprivileged families financially and emotionally.",
+  },
+  {
+    icon: Layers,
+    text: "Provide scholarships and ensure access to quality education for all.",
+  },
+  {
+    icon: Stethoscope,
+    text: "Offer medical aid and healthcare support to the sick and disabled.",
+  },
+  {
+    icon: Handshake,
+    text: "Empower families through business support and skill development.",
+  },
+  {
+    icon: Target,
+    text: "Help the needy rise from zakāt receivers to zakāt givers.",
+  },
+];
+
 const About = () => {
-
-  const missions = [
-    {
-      icon: BookOpen,
-      text: "Nurture the next generation with Islamic and modern education.",
-    },
-    {
-      icon: Users,
-      text: "Support orphans, widows, and underprivileged families financially and emotionally.",
-    },
-    {
-      icon: Layers,
-      text: "Provide scholarships and ensure access to quality education for all.",
-    },
-    {
-      icon: Stethoscope,
-      text: "Offer medical aid and healthcare support to the sick and disabled.",
-    },
-    {
-      icon: Handshake,
-      text: "Empower families through business support and skill development.",
-    },
-    {
-      icon: Target,
-      text: "Help the needy rise from zakāt receivers to zakāt givers.",
-    },
-  ];
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -43,7 +49,8 @@ const About = () => {
             ABOUT <br /> NOOR AL-KHAIR CHARITABLE TRUST
           </h1>
           <p className="text-xl md:text-2xl opacity-95 leading-relaxed animate-slide-up">
-            Connecting the capable with the needy — serving humanity with dignity and faith.
+            Connecting the capable with the needy — serving humanity with
+            dignity and faith.
           </p>
         </div>
       </section>
@@ -59,23 +66,34 @@ const About = () => {
           <Card className="border-2 border-primary/20 shadow-card">
             <CardContent className="p-8 md:p-12 space-y-6 text-lg leading-relaxed">
               <p>
-                Noor Al-Khair Charitable Trust (<span className="font-semibold text-primary">NAKCT</span>) 
-                is a non-profit Islamic organization established in 2024 by{" "}
-                <span className="font-semibold">Haji MOHAMMED YUSUF ADAM SHAIKH</span> (Founder) and{" "}
-                <span className="font-semibold">SALEEM MOMIN</span> (Co-founder). In 2025, the legal framework 
-                was strengthened with the support of{" "}
-                <span className="italic">Haji Mohammed Noaman, Haji Mukarram Khan, Sheikh Dilavar Gulab, 
-                Rahemat Baig Mirza, and Israr Ahmed Shaikh</span>.
+                Noor Al-Khair Charitable Trust (
+                <span className="font-semibold text-primary">NAKCT</span>) is a
+                non-profit Islamic organization established in 2024 by{" "}
+                <span className="font-semibold">
+                  Haji MOHAMMED YUSUF ADAM SHAIKH
+                </span>{" "}
+                (Founder) and{" "}
+                <span className="font-semibold">SALEEM MOMIN</span>{" "}
+                (Co-founder). In 2025, the legal framework was strengthened with
+                the support of{" "}
+                <span className="italic">
+                  Haji Mohammed Noaman, Haji Mukarram Khan, Sheikh Dilavar
+                  Gulab, Rahemat Baig Mirza, and Israr Ahmed Shaikh
+                </span>
+                .
               </p>
               <p>
-                Guided by the Qur’an and Sunnah, our mission is to serve humanity through education, healthcare, 
-                social welfare, and economic empowerment. We believe that charity is not just financial aid, 
-                but a means to restore dignity, hope, and opportunity in people’s lives.
+                Guided by the Qur’an and Sunnah, our mission is to serve
+                humanity through education, healthcare, social welfare, and
+                economic empowerment. We believe that charity is not just
+                financial aid, but a means to restore dignity, hope, and
+                opportunity in people’s lives.
               </p>
               <p>
-                From supporting orphans, widows, and underprivileged families, to offering scholarships, medical 
-                aid, and small business support, every effort we make is rooted in the Islamic values of compassion, 
-                justice, and brotherhood.
+                From supporting orphans, widows, and underprivileged families,
+                to offering scholarships, medical aid, and small business
+                support, every effort we make is rooted in the Islamic values of
+                compassion, justice, and brotherhood.
               </p>
             </CardContent>
           </Card>
@@ -92,8 +110,10 @@ const About = () => {
 
           <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/30">
             <CardContent className="p-8 md:p-12 text-center text-xl leading-relaxed">
-              To build a society rooted in Qur’an and Sunnah — self-sufficient, educated, and spiritually strong. 
-              A community where the less fortunate are uplifted with dignity, and Islam becomes a complete way of life.
+              To build a society rooted in Qur’an and Sunnah — self-sufficient,
+              educated, and spiritually strong. A community where the less
+              fortunate are uplifted with dignity, and Islam becomes a complete
+              way of life.
             </CardContent>
           </Card>
         </div>
@@ -105,15 +125,16 @@ const About = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Our Mission</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Empowering the Ummah through holistic programs and sustainable initiatives
+              Empowering the Ummah through holistic programs and sustainable
+              initiatives
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-6"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {missions.map((mission, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="border border-border hover:shadow-hover transition-all duration-300"
               >
                 <CardContent className="p-6 flex items-start gap-4">
@@ -126,7 +147,8 @@ const About = () => {
 
           <div className="mt-12 text-center">
             <p className="text-xl font-semibold italic text-primary">
-              🌟 Motto: Connecting needy people with capable people to uplift the Ummah, Insha’Allah.
+              🌟 Motto: Connecting needy people with capable people to uplift
+              the Ummah, Insha’Allah.
             </p>
           </div>
         </div>
