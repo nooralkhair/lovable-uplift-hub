@@ -8,6 +8,9 @@ import inauguration2 from "@/assets/inauguration2.jpeg";
 import inauguration3 from "@/assets/inauguration3.jpeg";
 import inauguration4 from "@/assets/inauguration4.jpeg";
 import inauguration5 from "@/assets/inauguration5.jpeg";
+import inauguration6 from "@/assets/inauguration6.jpeg";
+import inauguration7 from "@/assets/inauguration7.jpeg";
+import inauguration8 from "@/assets/inauguration8.jpeg";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
@@ -45,6 +48,9 @@ const NewsEvents = () => {
     { url: inauguration3, caption: "Inaugural Ceremony" },
     { url: inauguration4, caption: "Inaugural Ceremony" },
     { url: inauguration5, caption: "Inaugural Ceremony" },
+    { url: inauguration6, caption: "Inaugural Ceremony" },
+    { url: inauguration7, caption: "Inaugural Ceremony" },
+    { url: inauguration8, caption: "Inaugural Ceremony" },
   ];
 
   const nextImage = () => {
