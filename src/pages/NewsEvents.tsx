@@ -153,7 +153,7 @@ const NewsEvents = () => {
                 <img
                   src={galleryImages[currentGalleryImgIdx].url}
                   alt={galleryImages[currentGalleryImgIdx].caption}
-                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain bg-black"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <p className="text-white text-lg font-semibold p-6">
@@ -202,7 +202,7 @@ const NewsEvents = () => {
                 <img
                   src={inaugurationImages[currentInaugurationImgIdx].url}
                   alt={inaugurationImages[currentInaugurationImgIdx].caption}
-                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain bg-black"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <p className="text-white text-lg font-semibold p-6">
