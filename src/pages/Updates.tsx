@@ -3,7 +3,6 @@ import OpportunityCard, {
   OpportunityCardProps,
 } from "@/components/OpportunityCard";
 import Tabs from "@/components/Tabs";
-import Navigation from "@/components/Navigation";
 import { Briefcase, GraduationCap } from "lucide-react";
 
 const opportunitiesList: Map<string, OpportunityCardProps[]> = new Map([
@@ -78,7 +77,7 @@ export default function OpportunitiesSection() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      
       <div className="py-10 px-4">
         <h1 className="text-3xl font-bold text-center text-primary mb-6">
           Opportunities

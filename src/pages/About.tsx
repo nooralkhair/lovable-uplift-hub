@@ -7,7 +7,6 @@ import {
   Layers,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const missions = [
@@ -40,7 +39,7 @@ const missions = [
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      
 
       {/* Hero Section */}
       <section className="bg-gradient-hero text-primary-foreground py-20">

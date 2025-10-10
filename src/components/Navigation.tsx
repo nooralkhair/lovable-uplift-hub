@@ -18,7 +18,7 @@ const Navigation = () => {
   const isMobile = useIsMobile();
 
   const navLinks = [
-    { name: "Home", path: "/" },
+    { name: "Home", path: "/home" },
     { name: "About", path: "/about" },
     { name: "Programmes", path: "/programmes" },
     { name: "Monthly Reports", path: "/monthly-reports" },
@@ -26,7 +26,7 @@ const Navigation = () => {
     // { name: "Updates", path: "/updates" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location.pathname.includes(path);
 
   const handleJoinUs = () => {
     if (isMobile) {
@@ -46,7 +46,7 @@ const Navigation = () => {
           {/* Logo and Donate Button */}
           <div className="flex items-center gap-3">
             <Link
-              to="/"
+              to="/home"
               className="h-28 w-28 rounded-full bg-[url('../src/assets/logo.jpg')] bg-center bg-no-repeat bg-[length:120%] flex items-center justify-center"
             />
             <Link to="/donate">

@@ -1,6 +1,5 @@
 import heroImage from "@/assets/hero.jpg";
 import Footer from "@/components/Footer";
-import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -48,7 +47,7 @@ const programmes = [
 const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

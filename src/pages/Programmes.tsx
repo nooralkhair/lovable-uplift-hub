@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
@@ -38,7 +37,7 @@ const Programmes = () => {
   }, [location]);
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      
       
       {/* Hero Section */}
       <section className="bg-gradient-hero text-primary-foreground py-20">

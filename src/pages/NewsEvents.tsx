@@ -13,7 +13,6 @@ import inauguration6 from "@/assets/inauguration6.jpeg";
 import inauguration7 from "@/assets/inauguration7.jpeg";
 import inauguration8 from "@/assets/inauguration8.jpeg";
 import Footer from "@/components/Footer";
-import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
@@ -32,9 +31,11 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const events = [
+export const events = [
   {
+    id: "inaugural",
     title: "Inaugural Ceremony of Noor Al-Khair Charitable Trust Office",
     date: "October 5, 2025",
     time: "11 AM",
@@ -47,6 +48,7 @@ const events = [
     image: event1,
   },
   {
+    id: "counseling",
     title: "INVITATION – STUDENTS COUNSELING SESSION",
     date: "October 12, 2025",
     time: "10 AM - 12 PM",
@@ -123,7 +125,7 @@ const NewsEvents = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      
 
       {/* Hero Section */}
       <section className="bg-gradient-hero text-primary-foreground py-20">
@@ -208,100 +210,20 @@ const NewsEvents = () => {
                     </div>
                   </div>
                   <div className="mt-auto pt-4">
-                    <Button
-                      variant="outline"
-                      className="w-full group-hover:bg-primary group-hover:text-white transition-colors"
-                      onClick={() => setSelectedEvent(event)}
-                    >
-                      View Details
-                    </Button>
+                    <Link to={`/news-events/${event.id}`}>
+                      <Button
+                        variant="outline"
+                        className="w-full group-hover:bg-primary group-hover:text-white transition-colors"
+                      >
+                        View Details
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
-        <Dialog
-          open={!!selectedEvent}
-          onOpenChange={() => setSelectedEvent(null)}
-        >
-          <DialogContent className="min-w-full w-full min-h-screen p-0 rounded-none sm:rounded-none overflow-hidden">
-            {selectedEvent && (
-              <div className="relative w-full h-full bg-background">
-                <button
-                  className="absolute top-4 right-4 z-10 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition"
-                  onClick={() => setSelectedEvent(null)}
-                >
-                  <X size={20} />
-                </button>
-                {/* Image */}
-                <div className="w-full h-64 sm:h-96 bg-muted overflow-hidden flex items-center justify-center">
-                  <img
-                    src={selectedEvent.image}
-                    alt={selectedEvent.title}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-
-                {/* Details */}
-                <div className="p-6 sm:p-8 space-y-4 overflow-y-auto max-h-[80vh]">
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold">
-                      {selectedEvent.title}
-                    </DialogTitle>
-                  </DialogHeader>
-
-                  <div className="text-sm text-muted-foreground space-y-2">
-                    <div className="flex items-center gap-2">
-                      <CalendarDays size={16} className="text-primary" />
-                      <span>{selectedEvent.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock size={16} className="text-primary" />
-                      <span>{selectedEvent.time}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Phone size={16} className="text-primary" />
-                      <a href={`tel:${selectedEvent.contact}`}>
-                        <span className="hover:underline">
-                          {selectedEvent.contact}
-                        </span>
-                      </a>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <MapPin
-                        size={16}
-                        className="flex-shrink-0 mt-0.5 text-primary"
-                      />
-                      {selectedEvent.locationUrl ? (
-                        <a
-                          href={selectedEvent.locationUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <span className="hover:underline">
-                            {selectedEvent.location}
-                          </span>
-                        </a>
-                      ) : (
-                        <div className="text-sm leading-snug break-words overflow-hidden h-[3.5em] sm:h-[4em]">
-                          {selectedEvent.location}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  <div
-                    className="text-base text-foreground leading-relaxed whitespace-pre-line"
-                    dangerouslySetInnerHTML={{
-                      __html: selectedEvent.description,
-                    }}
-                  />
-                </div>
-              </div>
-            )}
-          </DialogContent>
-        </Dialog>
       </section>
 
       {/* Gallery Section */}

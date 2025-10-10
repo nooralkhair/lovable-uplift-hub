@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Building2, QrCode } from "lucide-react";
@@ -7,7 +6,7 @@ import qrCode from "@/assets/qrcode.jpeg";
 const Donate = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      
 
       {/* Hero Section */}
       <section className="bg-gradient-hero text-primary-foreground py-20">

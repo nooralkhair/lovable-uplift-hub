@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { FileText, Download } from "lucide-react";
 import OCT_DEC_2024 from "@/assets/NAKCT-OCT-DEC-2024.pdf";
@@ -34,7 +33,7 @@ const MonthlyReports = () => {
   if (reports.length === 0) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Navigation />
+        
         <section className="bg-gradient-hero text-primary-foreground py-20">
           <div className="container mx-auto px-4 text-center max-w-4xl">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
@@ -57,7 +56,7 @@ const MonthlyReports = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      
 
       {/* Hero Section */}
       <section className="bg-gradient-hero text-primary-foreground py-20">
