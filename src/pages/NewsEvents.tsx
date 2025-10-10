@@ -1,4 +1,5 @@
 import event1 from "@/assets/event1.jpg";
+import event2 from "@/assets/event2.jpeg";
 import gallery1 from "@/assets/gallery1.jpeg";
 import gallery2 from "@/assets/gallery2.jpeg";
 import gallery3 from "@/assets/gallery3.jpeg";
@@ -14,8 +15,22 @@ import inauguration8 from "@/assets/inauguration8.jpeg";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  CalendarDays,
+  ChevronLeft,
+  ChevronRight,
+  Clock,
+  MapPin,
+  Phone,
+  X,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 
 const events = [
@@ -25,9 +40,23 @@ const events = [
     time: "11 AM",
     location:
       "Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
+    locationUrl: "https://maps.app.goo.gl/ttTnfu91maotXJyD8",
     description:
       "Join us for the grand opening of our new office. Meet the team, learn about our mission, and explore how you can get involved.",
+    contact: 7698853478,
     image: event1,
+  },
+  {
+    title: "INVITATION – STUDENTS COUNSELING SESSION",
+    date: "October 12, 2025",
+    time: "10 AM - 12 PM",
+    location:
+      "Noor Al-Khair Charitable Trust Office, Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
+    locationUrl: "https://maps.app.goo.gl/ttTnfu91maotXJyD8",
+    description:
+      "🌟 Guidance for a Brighter Future! 🌟 <br/> We invite all students and parents to join our Counseling Session aimed at helping students choose the right educational and career path, develop confidence, and achieve success — Insha’Allah. <br/> ✨ Open for all students — especially those seeking career guidance and motivation. Let’s come together to inspire and build a successful future generation!",
+    contact: 7698853478,
+    image: event2,
   },
 ];
 
@@ -52,6 +81,7 @@ const inaugurationImages = [
 const NewsEvents = () => {
   const [currentGalleryImgIdx, setCurrentGalleryImgIdx] = useState(0);
   const [currentInaugurationImgIdx, setCurrentInaugurationImgIdx] = useState(0);
+  const [selectedEvent, setSelectedEvent] = useState<any | null>(null);
 
   const nextImage = () => {
     setCurrentGalleryImgIdx((prevIndex) =>
@@ -118,22 +148,160 @@ const NewsEvents = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((event, index) => (
               <Card
                 key={index}
-                className="border-2 border-primary/20 shadow-card hover:shadow-hover transition-all duration-300 hover:scale-105 overflow-hidden"
+                onClick={() => setSelectedEvent(event)}
+                className="group overflow-hidden border-2 border-primary/20 shadow-card hover:shadow-hover transition-all duration-300 flex flex-col h-[480px] sm:h-[500px]"
               >
-                {/* Event Image */}
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="w-full h-full object-cover"
-                />
+                {/* Image */}
+                <div className="w-full h-56 sm:h-60 overflow-hidden flex items-center justify-center bg-muted">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="max-h-full max-w-full object-contain transition-transform duration-500"
+                  />
+                </div>
+                <CardHeader className="p-4">
+                  <h3 className="text-lg sm:text-xl font-semibold line-clamp-2">
+                    {event.title}
+                  </h3>
+                </CardHeader>
+
+                <CardContent className="px-4 pb-6 flex flex-col flex-grow space-y-3">
+                  <div className="text-sm text-muted-foreground space-y-1">
+                    <div className="flex items-center gap-2">
+                      <CalendarDays size={16} className="text-primary" />
+                      <span>{event.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock size={16} className="text-primary" />
+                      <span>{event.time}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Phone size={16} className="text-primary" />
+                      <a href={`tel:${event.contact}`}>
+                        <span className="hover:underline">{event.contact}</span>
+                      </a>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <MapPin
+                        size={16}
+                        className="flex-shrink-0 mt-0.5 text-primary"
+                      />
+                      {event.locationUrl ? (
+                        <a
+                          href={event.locationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className="hover:underline">
+                            {event.location}
+                          </span>
+                        </a>
+                      ) : (
+                        <div className="text-sm leading-snug break-words overflow-hidden h-[3.5em] sm:h-[4em]">
+                          {event.location}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <div className="mt-auto pt-4">
+                    <Button
+                      variant="outline"
+                      className="w-full group-hover:bg-primary group-hover:text-white transition-colors"
+                      onClick={() => setSelectedEvent(event)}
+                    >
+                      View Details
+                    </Button>
+                  </div>
+                </CardContent>
               </Card>
             ))}
           </div>
         </div>
+        <Dialog
+          open={!!selectedEvent}
+          onOpenChange={() => setSelectedEvent(null)}
+        >
+          <DialogContent className="min-w-full w-full min-h-screen p-0 rounded-none sm:rounded-none overflow-hidden">
+            {selectedEvent && (
+              <div className="relative w-full h-full bg-background">
+                <button
+                  className="absolute top-4 right-4 z-10 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition"
+                  onClick={() => setSelectedEvent(null)}
+                >
+                  <X size={20} />
+                </button>
+                {/* Image */}
+                <div className="w-full h-64 sm:h-96 bg-muted overflow-hidden flex items-center justify-center">
+                  <img
+                    src={selectedEvent.image}
+                    alt={selectedEvent.title}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
+                {/* Details */}
+                <div className="p-6 sm:p-8 space-y-4 overflow-y-auto max-h-[80vh]">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold">
+                      {selectedEvent.title}
+                    </DialogTitle>
+                  </DialogHeader>
+
+                  <div className="text-sm text-muted-foreground space-y-2">
+                    <div className="flex items-center gap-2">
+                      <CalendarDays size={16} className="text-primary" />
+                      <span>{selectedEvent.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock size={16} className="text-primary" />
+                      <span>{selectedEvent.time}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Phone size={16} className="text-primary" />
+                      <a href={`tel:${selectedEvent.contact}`}>
+                        <span className="hover:underline">
+                          {selectedEvent.contact}
+                        </span>
+                      </a>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <MapPin
+                        size={16}
+                        className="flex-shrink-0 mt-0.5 text-primary"
+                      />
+                      {selectedEvent.locationUrl ? (
+                        <a
+                          href={selectedEvent.locationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className="hover:underline">
+                            {selectedEvent.location}
+                          </span>
+                        </a>
+                      ) : (
+                        <div className="text-sm leading-snug break-words overflow-hidden h-[3.5em] sm:h-[4em]">
+                          {selectedEvent.location}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div
+                    className="text-base text-foreground leading-relaxed whitespace-pre-line"
+                    dangerouslySetInnerHTML={{
+                      __html: selectedEvent.description,
+                    }}
+                  />
+                </div>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </section>
 
       {/* Gallery Section */}

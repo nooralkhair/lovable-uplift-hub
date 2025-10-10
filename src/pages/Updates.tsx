@@ -66,8 +66,8 @@ const opportunitiesList: Map<string, OpportunityCardProps[]> = new Map([
       },
     ],
   ],
-  ["Jobs", []],
-  ["Scholarships", []],
+  ["Job", []],
+  ["Scholarship", []],
 ]);
 
 export default function OpportunitiesSection() {

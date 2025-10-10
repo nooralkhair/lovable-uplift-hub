@@ -7,22 +7,22 @@ import FEB_2025 from "@/assets/NAKCT-FEB-2025.pdf";
 import MAR_2025 from "@/assets/NAKCT-MAR-2025.pdf";
 import APR_2025 from "@/assets/NAKCT-APR-2025.pdf";
 import MAY_2025 from "@/assets/NAKCT-MAY-2025.pdf";
-// import JUN_2025 from "@/assets/NAKCT-JUN-2025.pdf";
+import JUN_2025 from "@/assets/NAKCT-JUN-2025.pdf";
 import JULY_2025 from "@/assets/NAKCT-JULY-2025.pdf";
 import AUG_2025 from "@/assets/NAKCT-AUG-2025.pdf";
 import SEPT_2025 from "@/assets/NAKCT-SEPT-2025.pdf";
 
 const reports = [
-  { month: "October-December 2024", pdfUrl: OCT_DEC_2024 },
-  { month: "January 2025", pdfUrl: JAN_2025 },
-  { month: "February 2025", pdfUrl: FEB_2025 },
-  { month: "March 2025", pdfUrl: MAR_2025 },
-  { month: "April 2025", pdfUrl: APR_2025 },
-  { month: "May 2025", pdfUrl: MAY_2025 },
-  // {month: "June 2025", pdfUrl: JUN_2025}, // Report not available
-  { month: "July 2025", pdfUrl: JULY_2025 },
-  { month: "August 2025", pdfUrl: AUG_2025 },
   { month: "September 2025", pdfUrl: SEPT_2025 },
+  { month: "August 2025", pdfUrl: AUG_2025 },
+  { month: "July 2025", pdfUrl: JULY_2025 },
+  { month: "June 2025", pdfUrl: JUN_2025 },
+  { month: "May 2025", pdfUrl: MAY_2025 },
+  { month: "April 2025", pdfUrl: APR_2025 },
+  { month: "March 2025", pdfUrl: MAR_2025 },
+  { month: "February 2025", pdfUrl: FEB_2025 },
+  { month: "January 2025", pdfUrl: JAN_2025 },
+  { month: "October-December 2024", pdfUrl: OCT_DEC_2024 },
 ];
 
 const MonthlyReports = () => {
