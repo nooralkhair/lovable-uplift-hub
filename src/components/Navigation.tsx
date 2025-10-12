@@ -26,8 +26,6 @@ const Navigation = () => {
     // { name: "Updates", path: "/updates" },
   ];
 
-  console.log(location.pathname);
-
   const isActive = (path: string) => {
     if (path === "/") {
       return location.pathname === "/";

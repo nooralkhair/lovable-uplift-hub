@@ -12,15 +12,13 @@ import inauguration5 from "@/assets/inauguration5.jpeg";
 import inauguration6 from "@/assets/inauguration6.jpeg";
 import inauguration7 from "@/assets/inauguration7.jpeg";
 import inauguration8 from "@/assets/inauguration8.jpeg";
+import counselling1 from "@/assets/COUNSELING-1.jpeg";
+import counselling2 from "@/assets/COUNSELING-2.jpeg";
+import counselling3 from "@/assets/COUNSELING-3.jpeg";
+import counselling4 from "@/assets/COUNSELING-4.jpeg";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import {
   CalendarDays,
   ChevronLeft,
@@ -28,7 +26,6 @@ import {
   Clock,
   MapPin,
   Phone,
-  X,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -80,10 +77,17 @@ const inaugurationImages = [
   { url: inauguration8, caption: "Inaugural Ceremony" },
 ];
 
+const counselingSessionImages = [
+  { url: counselling1, caption: "Counseling Session" },
+  { url: counselling2, caption: "Counseling Session" },
+  { url: counselling3, caption: "Counseling Session" },
+  { url: counselling4, caption: "Counseling Session" },
+];
+
 const NewsEvents = () => {
   const [currentGalleryImgIdx, setCurrentGalleryImgIdx] = useState(0);
   const [currentInaugurationImgIdx, setCurrentInaugurationImgIdx] = useState(0);
-  const [selectedEvent, setSelectedEvent] = useState<any | null>(null);
+  const [currentCounselingImgIdx, setCurrentCounselingImgIdx] = useState(0);
 
   const nextImage = () => {
     setCurrentGalleryImgIdx((prevIndex) =>
@@ -108,6 +112,18 @@ const NewsEvents = () => {
     );
   };
 
+  const nextImageCounseling = () => {
+    setCurrentCounselingImgIdx((prevIndex) =>
+      prevIndex === counselingSessionImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImageCounseling = () => {
+    setCurrentCounselingImgIdx((prevIndex) =>
+      prevIndex === 0 ? counselingSessionImages.length - 1 : prevIndex - 1
+    );
+  };
+
   // Auto-scroll every 2 seconds
   useEffect(() => {
     const interval = setInterval(() => {
@@ -122,6 +138,13 @@ const NewsEvents = () => {
     }, 2000);
     return () => clearInterval(interval); // Cleanup
   }, [inaugurationImages.length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextImageCounseling();
+    }, 2000);
+    return () => clearInterval(interval); // Cleanup
+  }, [counselingSessionImages.length]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -154,7 +177,6 @@ const NewsEvents = () => {
             {events.map((event, index) => (
               <Card
                 key={index}
-                onClick={() => setSelectedEvent(event)}
                 className="group overflow-hidden border-2 border-primary/20 shadow-card hover:shadow-hover transition-all duration-300 flex flex-col h-[480px] sm:h-[500px]"
               >
                 {/* Image */}
@@ -327,6 +349,55 @@ const NewsEvents = () => {
                     onClick={() => setCurrentInaugurationImgIdx(index)}
                     className={`w-3 h-3 rounded-full transition-all ${
                       index === currentInaugurationImgIdx
+                        ? "bg-primary w-8"
+                        : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                    }`}
+                  />
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="border-2 border-secondary/20 shadow-card overflow-hidden">
+            <CardContent className="p-0">
+              <div className="relative">
+                <img
+                  src={counselingSessionImages[currentCounselingImgIdx].url}
+                  alt={counselingSessionImages[currentCounselingImgIdx].caption}
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain bg-black"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                  <p className="text-white text-lg font-semibold p-6">
+                    {counselingSessionImages[currentCounselingImgIdx].caption}
+                  </p>
+                </div>
+
+                {/* Navigation Buttons */}
+                <Button
+                  variant="secondary"
+                  size="icon"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg"
+                  onClick={prevImageCounseling}
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="icon"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg"
+                  onClick={nextImageCounseling}
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </Button>
+              </div>
+
+              {/* Thumbnails */}
+              <div className="flex justify-center gap-2 p-4 bg-background">
+                {counselingSessionImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentCounselingImgIdx(index)}
+                    className={`w-3 h-3 rounded-full transition-all ${
+                      index === currentCounselingImgIdx
                         ? "bg-primary w-8"
                         : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                     }`}
