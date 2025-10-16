@@ -1,5 +1,7 @@
 import event1 from "@/assets/event1.jpg";
 import event2 from "@/assets/event2.jpeg";
+import event3 from "@/assets/event3.jpg";
+import event4 from "@/assets/event4.jpg";
 import gallery1 from "@/assets/gallery1.jpeg";
 import gallery2 from "@/assets/gallery2.jpeg";
 import gallery3 from "@/assets/gallery3.jpeg";
@@ -37,7 +39,7 @@ export const events = [
     date: "October 5, 2025",
     time: "11 AM",
     location:
-      "Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
+      "Noor Al-Khair Charitable Trust Office, Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
     locationUrl: "https://maps.app.goo.gl/ttTnfu91maotXJyD8",
     description:
       "Join us for the grand opening of our new office. Meet the team, learn about our mission, and explore how you can get involved.",
@@ -56,6 +58,30 @@ export const events = [
       "🌟 Guidance for a Brighter Future! 🌟 <br/> We invite all students and parents to join our Counseling Session aimed at helping students choose the right educational and career path, develop confidence, and achieve success — Insha’Allah. <br/> ✨ Open for all students — especially those seeking career guidance and motivation. Let’s come together to inspire and build a successful future generation!",
     contact: 7698853478,
     image: event2,
+  },
+  {
+    id: "admission",
+    title: "MAKTAB NOOR AL-KHAIR - ADMISSIONS OPEN",
+    date: "Ongoing",
+    time: "Flexible Timings",
+    location:
+      "Noor Al-Khair Charitable Trust Office, Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
+    locationUrl: "https://maps.app.goo.gl/ttTnfu91maotXJyD8",
+    description: "<strong>📚 Learn Quran With Highly Qualified Teachers</strong><br/><br/>  📖 <strong>You Will Learn:</strong><br/> • Basic Islamic Beliefs, Manners and Etiquettes<br/> • Memorization of Quranic Surahs<br/> • Daily Essential Dua’s<br/> • The Seerah of Prophet Mohammad (ﷺ)<br/> • Lady Teacher for Female Students<br/> • Personality Development<br/><br/> 🌙 <strong>You Will Facilitate:</strong><br/> • Flexible Schedule (24/7)<br/> • Batch-wise & 1-to-1 Classes<br/> • Easy Lessons with Deeniyat Syllabus<br/> • Affordable Monthly Fee<br/> • Spacious Classroom<br/> • CCTV Surveillance ",
+    contact: 7698853478,
+    image: event3,
+  },
+  {
+    id: "medical-camp",
+    title: "FREE MEDICAL CONSULTATION CAMP",
+    date: "Every Sunday",
+    time: "7 PM - 9 PM",
+    location:
+      "Noor Al-Khair Charitable Trust Office, Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
+    locationUrl: "https://maps.app.goo.gl/ttTnfu91maotXJyD8",
+    description: "🩺 <strong>FREE MEDICAL CONSULTATION CAMP (Weekly)</strong><br/> Organized by: <strong>Noor Al-Khair Charitable Trust</strong><br/><br/> 🧾 <strong>Register for MEDICAL CONSULTATION</strong><br/> 👨‍⚕️ <strong>Doctor:</strong> Dr. Rahemat Baig Mirza, B.Sc, DHMS<br/><br/> 🕖 <strong>Time:</strong> 7:00 PM – 9:00 PM<br/> 📅 <strong>Day:</strong> Every Sunday (Once a Week)<br/><br/> 💊 <strong>Services Available:</strong><br/> 1) Free Medical Consultation (Homeopathy)<br/> 2) Medicines at affordable prices, with concessions for underprivileged people.<br/> 3) Medical Guidance & Health Advice<br/><br/> 📍 <strong>Venue:</strong><br/> Noor Al-Khair Charitable Trust Office<br/> Shop No. 30, Govind Tower Commercial,<br/> Umerkoi Road, Bavisa Faliya, Silvassa<br/><br/> 📞 <strong>For Registration / Appointments:</strong><br/> Call or WhatsApp: <a href='tel:+917698853478'>+91 76988 53478</a><br/><br/> ✨ <em>Your Health, Our Care – Together for a Better Tomorrow</em>",
+    contact: 7698853478,
+    image: event4,
   },
 ];
 

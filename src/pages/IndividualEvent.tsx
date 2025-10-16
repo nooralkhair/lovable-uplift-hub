@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { CalendarDays, Clock, MapPin, ArrowLeft } from "lucide-react";
+import { CalendarDays, Clock, MapPin, ArrowLeft, Phone } from "lucide-react";
 import { events } from "./NewsEvents";
 
 const EventDetailPage = () => {
@@ -43,6 +43,12 @@ const EventDetailPage = () => {
               <div className="flex items-center gap-2">
                 <Clock size={18} />
                 <span>{event.time}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone size={18} />
+                <a href={`tel:${event.contact}`}>
+                  <span className="hover:underline">{event.contact}</span>
+                </a>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin size={18} className="mt-1" />
