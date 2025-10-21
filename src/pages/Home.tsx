@@ -47,7 +47,6 @@ const programmes = [
 const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -84,10 +83,8 @@ const Home = () => {
 
           <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/30">
             <CardContent className="p-8 md:p-12 text-center text-xl leading-relaxed">
-              To build a society rooted in Qur’an and Sunnah — self-sufficient,
-              educated, and spiritually strong. A community where the less
-              fortunate are uplifted with dignity, and Islam becomes a complete
-              way of life.
+              To build a society where every needy person finds dignity,
+              support, and opportunity through collective compassion.
             </CardContent>
           </Card>
           <div className="text-center mt-12">
