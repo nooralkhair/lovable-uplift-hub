@@ -10,7 +10,7 @@ const EventDetailPage = () => {
     return (
       <div className="py-20 text-center">
         <h2 className="text-2xl font-bold mb-4">Event not found</h2>
-        <Link to="/news-events" className="text-primary hover:underline">
+        <Link to="/news-events#news-events" className="text-primary hover:underline">
           Back to Events
         </Link>
       </div>
@@ -21,7 +21,7 @@ const EventDetailPage = () => {
     <div className="min-h-screen flex flex-col pt-10">
         
       <div className="container mx-auto px-4 max-w-4xl">
-        <Link to="/news-events" className="flex items-center gap-2 text-primary hover:underline mb-8">
+        <Link to="/news-events#news-events" className="flex items-center gap-2 text-primary hover:underline mb-8">
           <ArrowLeft size={16} /> Back to Events
         </Link>
 

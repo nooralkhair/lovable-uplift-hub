@@ -30,21 +30,32 @@ import {
   Phone,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const events = [
   {
-    id: "inaugural",
-    title: "Inaugural Ceremony of Noor Al-Khair Charitable Trust Office",
-    date: "October 5, 2025",
-    time: "11 AM",
+    id: "medical-camp",
+    title: "FREE MEDICAL CONSULTATION CAMP",
+    date: "Every Sunday",
+    time: "7 PM - 9 PM",
     location:
       "Noor Al-Khair Charitable Trust Office, Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
     locationUrl: "https://maps.app.goo.gl/ttTnfu91maotXJyD8",
-    description:
-      "Join us for the grand opening of our new office. Meet the team, learn about our mission, and explore how you can get involved.",
+    description: "🩺 <strong>FREE MEDICAL CONSULTATION CAMP (Weekly)</strong><br/> Organized by: <strong>Noor Al-Khair Charitable Trust</strong><br/><br/> 🧾 <strong>Register for MEDICAL CONSULTATION</strong><br/> 👨‍⚕️ <strong>Doctor:</strong> Dr. Rahemat Baig Mirza, B.Sc, DHMS<br/><br/> 🕖 <strong>Time:</strong> 7:00 PM – 9:00 PM<br/> 📅 <strong>Day:</strong> Every Sunday (Once a Week)<br/><br/> 💊 <strong>Services Available:</strong><br/> 1) Free Medical Consultation (Homeopathy)<br/> 2) Medicines at affordable prices, with concessions for underprivileged people.<br/> 3) Medical Guidance & Health Advice<br/><br/> 📍 <strong>Venue:</strong><br/> Noor Al-Khair Charitable Trust Office<br/> Shop No. 30, Govind Tower Commercial,<br/> Umerkoi Road, Bavisa Faliya, Silvassa<br/><br/> 📞 <strong>For Registration / Appointments:</strong><br/> Call or WhatsApp: <a href='tel:+917698853478'>+91 76988 53478</a><br/><br/> ✨ <em>Your Health, Our Care – Together for a Better Tomorrow</em>",
     contact: 7698853478,
-    image: event1,
+    image: event4,
+  },
+  {
+    id: "admission",
+    title: "MAKTAB NOOR AL-KHAIR - ADMISSIONS OPEN",
+    date: "Ongoing",
+    time: "Flexible Timings",
+    location:
+      "Noor Al-Khair Charitable Trust Office, Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
+    locationUrl: "https://maps.app.goo.gl/ttTnfu91maotXJyD8",
+    description: "<strong>📚 Learn Quran With Highly Qualified Teachers</strong><br/><br/>  📖 <strong>You Will Learn:</strong><br/> • Basic Islamic Beliefs, Manners and Etiquettes<br/> • Memorization of Quranic Surahs<br/> • Daily Essential Dua’s<br/> • The Seerah of Prophet Mohammad (ﷺ)<br/> • Lady Teacher for Female Students<br/> • Personality Development<br/><br/> 🌙 <strong>You Will Facilitate:</strong><br/> • Flexible Schedule (24/7)<br/> • Batch-wise & 1-to-1 Classes<br/> • Easy Lessons with Deeniyat Syllabus<br/> • Affordable Monthly Fee<br/> • Spacious Classroom<br/> • CCTV Surveillance ",
+    contact: 7698853478,
+    image: event3,
   },
   {
     id: "counseling",
@@ -60,28 +71,17 @@ export const events = [
     image: event2,
   },
   {
-    id: "admission",
-    title: "MAKTAB NOOR AL-KHAIR - ADMISSIONS OPEN",
-    date: "Ongoing",
-    time: "Flexible Timings",
+    id: "inaugural",
+    title: "Inaugural Ceremony of Noor Al-Khair Charitable Trust Office",
+    date: "October 5, 2025",
+    time: "11 AM",
     location:
       "Noor Al-Khair Charitable Trust Office, Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
     locationUrl: "https://maps.app.goo.gl/ttTnfu91maotXJyD8",
-    description: "<strong>📚 Learn Quran With Highly Qualified Teachers</strong><br/><br/>  📖 <strong>You Will Learn:</strong><br/> • Basic Islamic Beliefs, Manners and Etiquettes<br/> • Memorization of Quranic Surahs<br/> • Daily Essential Dua’s<br/> • The Seerah of Prophet Mohammad (ﷺ)<br/> • Lady Teacher for Female Students<br/> • Personality Development<br/><br/> 🌙 <strong>You Will Facilitate:</strong><br/> • Flexible Schedule (24/7)<br/> • Batch-wise & 1-to-1 Classes<br/> • Easy Lessons with Deeniyat Syllabus<br/> • Affordable Monthly Fee<br/> • Spacious Classroom<br/> • CCTV Surveillance ",
+    description:
+      "Join us for the grand opening of our new office. Meet the team, learn about our mission, and explore how you can get involved.",
     contact: 7698853478,
-    image: event3,
-  },
-  {
-    id: "medical-camp",
-    title: "FREE MEDICAL CONSULTATION CAMP",
-    date: "Every Sunday",
-    time: "7 PM - 9 PM",
-    location:
-      "Noor Al-Khair Charitable Trust Office, Shop No. 30, Govinda Commercial Complex, Umerkoi Road, Bavisa Faliya, Silvassa",
-    locationUrl: "https://maps.app.goo.gl/ttTnfu91maotXJyD8",
-    description: "🩺 <strong>FREE MEDICAL CONSULTATION CAMP (Weekly)</strong><br/> Organized by: <strong>Noor Al-Khair Charitable Trust</strong><br/><br/> 🧾 <strong>Register for MEDICAL CONSULTATION</strong><br/> 👨‍⚕️ <strong>Doctor:</strong> Dr. Rahemat Baig Mirza, B.Sc, DHMS<br/><br/> 🕖 <strong>Time:</strong> 7:00 PM – 9:00 PM<br/> 📅 <strong>Day:</strong> Every Sunday (Once a Week)<br/><br/> 💊 <strong>Services Available:</strong><br/> 1) Free Medical Consultation (Homeopathy)<br/> 2) Medicines at affordable prices, with concessions for underprivileged people.<br/> 3) Medical Guidance & Health Advice<br/><br/> 📍 <strong>Venue:</strong><br/> Noor Al-Khair Charitable Trust Office<br/> Shop No. 30, Govind Tower Commercial,<br/> Umerkoi Road, Bavisa Faliya, Silvassa<br/><br/> 📞 <strong>For Registration / Appointments:</strong><br/> Call or WhatsApp: <a href='tel:+917698853478'>+91 76988 53478</a><br/><br/> ✨ <em>Your Health, Our Care – Together for a Better Tomorrow</em>",
-    contact: 7698853478,
-    image: event4,
+    image: event1,
   },
 ];
 
@@ -111,6 +111,26 @@ const counselingSessionImages = [
 ];
 
 const NewsEvents = () => {
+  const location = useLocation();
+  
+    useEffect(() => {
+      if (location.hash) {
+        const el = document.querySelector(location.hash);
+        if (el) {
+          const yOffset = -112; // Adjust for sticky headers (if any)
+          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  
+          window.scrollTo({
+            top: y,
+            behavior: "smooth",
+          });
+  
+          setTimeout(() => {
+            window.history.replaceState(null, "", location.pathname);
+          }, 600); // or match scroll duration
+        }
+      }
+    }, [location]);
   const [currentGalleryImgIdx, setCurrentGalleryImgIdx] = useState(0);
   const [currentInaugurationImgIdx, setCurrentInaugurationImgIdx] = useState(0);
   const [currentCounselingImgIdx, setCurrentCounselingImgIdx] = useState(0);
@@ -189,7 +209,7 @@ const NewsEvents = () => {
       </section>
 
       {/* Events Section */}
-      <section className="py-20 bg-background">
+      <section id="news-events" className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Events</h2>

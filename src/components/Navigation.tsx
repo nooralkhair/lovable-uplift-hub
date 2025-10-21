@@ -33,7 +33,6 @@ const Navigation = () => {
     return location.pathname.includes(path);
   };
 
-
   const handleJoinUs = () => {
     if (isMobile) {
       const message = encodeURIComponent(
@@ -55,15 +54,23 @@ const Navigation = () => {
               to="/"
               className="h-28 w-28 rounded-full bg-[url('../src/assets/logo.jpg')] bg-center bg-no-repeat bg-[length:120%] flex items-center justify-center"
             />
-            <Link to="/donate">
-              <Button
-                size="lg"
-                className="sm:flex items-center gap-2 animate-blink hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl text-lg bg-yellow-500 hover:bg-yellow-400 text-red-600"
-              >
-                <Heart className="h-4 w-4 fill-white stroke-white" />
-                Donate Now
-              </Button>
-            </Link>
+            <div>
+              <Link to="/about">
+                <h2 className="text-lg sm:text-xl font-extrabold tracking-wide text-left drop-shadow-md mb-1 text-primary">
+                  NOOR AL KHAIR CHARITABLE TRUST
+                </h2>
+              </Link>
+
+              <Link to="/donate">
+                <Button
+                  size="lg"
+                  className="sm:flex items-center gap-2 animate-blink hover:animate-none hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl text-lg bg-yellow-500 hover:bg-yellow-400 text-red-600"
+                >
+                  <Heart className="h-4 w-4 fill-white stroke-white" />
+                  Donate Now
+                </Button>
+              </Link>
+            </div>
           </div>
 
           {/* Desktop Navigation */}

@@ -109,10 +109,7 @@ const About = () => {
 
           <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/30">
             <CardContent className="p-8 md:p-12 text-center text-xl leading-relaxed">
-              To build a society rooted in Qur’an and Sunnah — self-sufficient,
-              educated, and spiritually strong. A community where the less
-              fortunate are uplifted with dignity, and Islam becomes a complete
-              way of life.
+              To build a society where every needy person finds dignity, support, and opportunity through collective compassion.
             </CardContent>
           </Card>
         </div>
@@ -124,8 +121,7 @@ const About = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Our Mission</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Empowering the Ummah through holistic programs and sustainable
-              initiatives
+              Connecting the needy with the capable to uplift the Ummah — Alhamdulillah.
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-6"></div>
           </div>
@@ -142,13 +138,6 @@ const About = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <p className="text-xl font-semibold italic text-primary">
-              🌟 Motto: Connecting needy people with capable people to uplift
-              the Ummah, Insha’Allah.
-            </p>
           </div>
         </div>
       </section>
