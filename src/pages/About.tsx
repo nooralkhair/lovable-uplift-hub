@@ -65,7 +65,7 @@ const About = () => {
           <Card className="border-2 border-primary/20 shadow-card">
             <CardContent className="p-8 md:p-12 space-y-6 text-lg leading-relaxed">
               <p>
-                Noor Al-Khair Charitable Trust (
+                NOOR AL-KHAIR CHARITABLE TRUST (
                 <span className="font-semibold text-primary">NAKCT</span>) is a
                 non-profit Islamic organization established in 2024 by{" "}
                 <span className="font-semibold">

@@ -304,18 +304,17 @@ const NewsEvents = () => {
               Glimpses of our impactful work in the community
             </p>
           </div>
-
           <Card className="border-2 border-secondary/20 shadow-card overflow-hidden">
             <CardContent className="p-0">
               <div className="relative">
                 <img
-                  src={galleryImages[currentGalleryImgIdx].url}
-                  alt={galleryImages[currentGalleryImgIdx].caption}
+                  src={counselingSessionImages[currentCounselingImgIdx].url}
+                  alt={counselingSessionImages[currentCounselingImgIdx].caption}
                   className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain bg-black"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <p className="text-white text-lg font-semibold p-6">
-                    {galleryImages[currentGalleryImgIdx].caption}
+                    {counselingSessionImages[currentCounselingImgIdx].caption}
                   </p>
                 </div>
 
@@ -324,7 +323,7 @@ const NewsEvents = () => {
                   variant="secondary"
                   size="icon"
                   className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg"
-                  onClick={prevImage}
+                  onClick={prevImageCounseling}
                 >
                   <ChevronLeft className="h-6 w-6" />
                 </Button>
@@ -332,7 +331,7 @@ const NewsEvents = () => {
                   variant="secondary"
                   size="icon"
                   className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg"
-                  onClick={nextImage}
+                  onClick={nextImageCounseling}
                 >
                   <ChevronRight className="h-6 w-6" />
                 </Button>
@@ -340,12 +339,12 @@ const NewsEvents = () => {
 
               {/* Thumbnails */}
               <div className="flex justify-center gap-2 p-4 bg-background">
-                {galleryImages.map((_, index) => (
+                {counselingSessionImages.map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => setCurrentGalleryImgIdx(index)}
+                    onClick={() => setCurrentCounselingImgIdx(index)}
                     className={`w-3 h-3 rounded-full transition-all ${
-                      index === currentGalleryImgIdx
+                      index === currentCounselingImgIdx
                         ? "bg-primary w-8"
                         : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                     }`}
@@ -407,13 +406,13 @@ const NewsEvents = () => {
             <CardContent className="p-0">
               <div className="relative">
                 <img
-                  src={counselingSessionImages[currentCounselingImgIdx].url}
-                  alt={counselingSessionImages[currentCounselingImgIdx].caption}
+                  src={galleryImages[currentGalleryImgIdx].url}
+                  alt={galleryImages[currentGalleryImgIdx].caption}
                   className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain bg-black"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <p className="text-white text-lg font-semibold p-6">
-                    {counselingSessionImages[currentCounselingImgIdx].caption}
+                    {galleryImages[currentGalleryImgIdx].caption}
                   </p>
                 </div>
 
@@ -422,7 +421,7 @@ const NewsEvents = () => {
                   variant="secondary"
                   size="icon"
                   className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg"
-                  onClick={prevImageCounseling}
+                  onClick={prevImage}
                 >
                   <ChevronLeft className="h-6 w-6" />
                 </Button>
@@ -430,7 +429,7 @@ const NewsEvents = () => {
                   variant="secondary"
                   size="icon"
                   className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg"
-                  onClick={nextImageCounseling}
+                  onClick={nextImage}
                 >
                   <ChevronRight className="h-6 w-6" />
                 </Button>
@@ -438,12 +437,12 @@ const NewsEvents = () => {
 
               {/* Thumbnails */}
               <div className="flex justify-center gap-2 p-4 bg-background">
-                {counselingSessionImages.map((_, index) => (
+                {galleryImages.map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => setCurrentCounselingImgIdx(index)}
+                    onClick={() => setCurrentGalleryImgIdx(index)}
                     className={`w-3 h-3 rounded-full transition-all ${
-                      index === currentCounselingImgIdx
+                      index === currentGalleryImgIdx
                         ? "bg-primary w-8"
                         : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                     }`}

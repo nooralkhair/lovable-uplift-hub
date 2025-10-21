@@ -60,7 +60,10 @@ const Home = () => {
         </div>
 
         <div className="container mx-auto px-4 z-10 text-center text-primary-foreground">
-          <h1 className="text-5xl md:text-5xl font-bold mb-8 animate-fade-in mx-auto py-12">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in py-12">
+            NOOR AL-KHAIR CHARITABLE TRUST
+          </h1>
+          <h1 className="text-5xl md:text-5xl font-bold mb-8 animate-fade-in mx-auto md:py-12">
             Connecting needy people with capable people to uplift the Ummah,
             Insha'Allah
           </h1>

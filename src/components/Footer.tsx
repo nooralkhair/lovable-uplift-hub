@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <span className="text-lg font-bold">
-                NOOR AL KHAIR CHARITABLE TRUST
+                NOOR AL-KHAIR CHARITABLE TRUST
               </span>
             </div>
             <p className="text-sm text-muted-foreground">

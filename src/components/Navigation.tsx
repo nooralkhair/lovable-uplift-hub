@@ -57,7 +57,7 @@ const Navigation = () => {
             <div>
               <Link to="/about">
                 <h2 className="text-lg sm:text-xl font-extrabold tracking-wide text-left drop-shadow-md mb-1 text-primary">
-                  NOOR AL KHAIR CHARITABLE TRUST
+                  NOOR AL-KHAIR CHARITABLE TRUST
                 </h2>
               </Link>
 
