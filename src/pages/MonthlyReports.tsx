@@ -11,8 +11,12 @@ import JULY_2025 from "@/assets/NAKCT-JULY-2025.pdf";
 import AUG_2025 from "@/assets/NAKCT-AUG-2025.pdf";
 import SEPT_2025 from "@/assets/NAKCT-SEPT-2025.pdf";
 import OCT_2025 from "@/assets/NAKCT-OCT-2025.pdf";
+import NOV_2025 from "@/assets/NAKCT-NOV-2025.pdf";
+import DEC_2025 from "@/assets/NAKCT-DEC-2025.pdf";
 
 const reports = [
+  { month: "December 2025", pdfUrl: DEC_2025 },
+  { month: "November 2025", pdfUrl: NOV_2025 },
   { month: "October 2025", pdfUrl: OCT_2025 },
   { month: "September 2025", pdfUrl: SEPT_2025 },
   { month: "August 2025", pdfUrl: AUG_2025 },
