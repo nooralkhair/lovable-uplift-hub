@@ -13,8 +13,22 @@ import SEPT_2025 from "@/assets/NAKCT-SEPT-2025.pdf";
 import OCT_2025 from "@/assets/NAKCT-OCT-2025.pdf";
 import NOV_2025 from "@/assets/NAKCT-NOV-2025.pdf";
 import DEC_2025 from "@/assets/NAKCT-DEC-2025.pdf";
+import JAN_2026 from "@/assets/NAKCT-JAN-2026.pdf";
+import FEB_2026 from "@/assets/NAKCT-FEB-2026.pdf";
+import MAR_2026 from "@/assets/NAKCT-MARCH-2026.pdf";
+import APR_2026 from "@/assets/NAKCT-APRIL-2026.pdf";
+import MAY_2026 from "@/assets/NAKCT-MAY-2026.pdf";
+import JUN_2026 from "@/assets/NAKCT-JUNE-2026.pdf";
+import JULY_2026 from "@/assets/NAKCT-JULY-2026.pdf";
 
 const reports = [
+  { month: "July 2026", pdfUrl: JULY_2026 },
+  { month: "June 2026", pdfUrl: JUN_2026 },
+  { month: "May 2026", pdfUrl: MAY_2026 },
+  { month: "April 2026", pdfUrl: APR_2026 },
+  { month: "March 2026", pdfUrl: MAR_2026 },
+  { month: "February 2026", pdfUrl: FEB_2026 },
+  { month: "January 2026", pdfUrl: JAN_2026 },
   { month: "December 2025", pdfUrl: DEC_2025 },
   { month: "November 2025", pdfUrl: NOV_2025 },
   { month: "October 2025", pdfUrl: OCT_2025 },
