@@ -21,6 +21,7 @@ const Navigation = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Programmes", path: "/programmes" },
+    { name: "Job Fair", path: "/employment" },
     { name: "Monthly Reports", path: "/monthly-reports" },
     { name: "News & Events", path: "/news-events" },
     // { name: "Updates", path: "/updates" },
@@ -80,11 +81,10 @@ const Navigation = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-4 py-2 rounded-lg transition-all duration-300 ${
-                    isActive(link.path)
+                  className={`px-4 py-2 whitespace-nowrap rounded-lg transition-all duration-300 ${isActive(link.path)
                       ? "bg-primary text-primary-foreground font-medium"
                       : "text-foreground hover:bg-muted"
-                  }`}
+                    }`}
                 >
                   {link.name}
                 </Link>
@@ -120,11 +120,10 @@ const Navigation = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 rounded-lg transition-all ${
-                    isActive(link.path)
+                  className={`px-4 py-3 rounded-lg transition-all ${isActive(link.path)
                       ? "bg-primary text-primary-foreground font-medium"
                       : "text-foreground hover:bg-muted"
-                  }`}
+                    }`}
                 >
                   {link.name}
                 </Link>
