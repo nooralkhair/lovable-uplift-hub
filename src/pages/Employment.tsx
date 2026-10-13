@@ -17,7 +17,7 @@ import {
 import posterSquare from "@/assets/job-fair-poster-square.jpg";
 
 const GOOGLE_FORM_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSdixuSb74CxiNnJ1Hc5Jdj5u8kaJW3FhmLwlHjs6CdcjVRf-w/viewform";
+  "https://docs.google.com/forms/d/e/1FAIpQLSdEujmBLmjMXkH2r90n173M6e-PHKVdqQvXQwz044vBDfvkRQ/viewform";
 
 const WHATSAPP_CONTACT = "7698853478";
 
